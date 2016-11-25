@@ -20,10 +20,7 @@ namespace StatsN
             configure?.Invoke(options);
             return new Statsd(options, new T());
         }
-        public static Statsd New<T>(StatsdOptions options) where T: BaseCommunicationProvider, new()
-        {
-            return new Statsd(options, new T());
-        }
+        public static Statsd New<T>(StatsdOptions options) where T: BaseCommunicationProvider, new() => new Statsd(options, new T());
         public static Statsd New(StatsdOptions options) => Statsd.New<Udp>(options);
         public static Statsd New(Action<StatsdOptions> options) => Statsd.New<Udp>(options);
         public Statsd(StatsdOptions options, BaseCommunicationProvider provider)
@@ -34,7 +31,7 @@ namespace StatsN
             }
             if(provider == null)
             {
-                throw new ArgumentNullException(nameof(provider));
+                _provider = new Udp();
             }
             if (string.IsNullOrEmpty(options.HostOrIp))
             {
@@ -48,26 +45,19 @@ namespace StatsN
             _provider = provider.Construct(options);
 
         }
-        public Task LogMetric(string metricName, long value, string metricType, string postfix = "")
-        {
-            if(value < 0)
-            {
-                options.LogEvent($"Metric {metricName} has a value of less than 0 which is invalid. Skipping", EventType.warning);
-                return Task.FromResult(0);
-            }
-            return LogMetric(metricName, value.ToString(), metricType, postfix);
-        }
+        public Task LogMetric(string metricName, long value, string metricType, string postfix = "") => LogMetric(metricName, value.ToString(), metricType, postfix);
+        
         public async Task LogMetric(string metricName, string value, string metricType, string postfix = "")
         {
             if (!_provider.IsConnected && !await _provider.Connect().ConfigureAwait(false))
             {
-                options.LogEvent("unable to connect message transport", EventType.error);
+                options.LogEvent("unable to connect message transport", EventType.Error);
                 return;
             }
             var calculateMetric = BuildMetric(metricName, value, metricType, options.Prefix, postfix);
             if (string.IsNullOrWhiteSpace(calculateMetric))
             {
-                options.LogEvent($"Unable to generate metric for {metricType} value {value}", EventType.error);
+                options.LogEvent($"Unable to generate metric for {metricType} value {value}", EventType.Error);
             }
             try
             {
@@ -79,21 +69,21 @@ namespace StatsN
             }
             
         }
-        internal static string BuildMetric(string metricName, string value, string metricType, string prefix = "", string postfix = "")
+        internal virtual string BuildMetric(string metricName, string value, string metricType, string prefix = "", string postfix = "")
         {
             if (string.IsNullOrWhiteSpace(metricName))
             {
-                Trace.TraceError("metric not passed to compile metric");
+                this.options.LogEvent("metric not passed to compile metric", EventType.Error);
                 return string.Empty;
             }
             if (string.IsNullOrWhiteSpace(value))
             {
-                Trace.TraceError("value not passed to compile metric");
+                this.options.LogEvent("value not passed to compile metric", EventType.Error);
                 return string.Empty;
             }
             if (string.IsNullOrWhiteSpace(metricType))
             {
-                Trace.TraceError("metric type not passed to compile metric. This really shouldnt happen");
+                this.options.LogEvent("metric type not passed to compile metric. This really shouldnt happen", EventType.Error);
                 return string.Empty;
             }
             StringBuilder builder;

@@ -7,12 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{12DA80FB-B93
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB96506B-E328-434C-91A0-1035CE5C7CEA}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		global.json = global.json
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StatsN", "src\StatsN\StatsN.xproj", "{1F37D04E-D74F-43EC-ABF1-591A23B26EFD}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StatsN.UnitTests", "src\StatsN.UnitTests\StatsN.UnitTests.xproj", "{B8C4A667-73F7-4623-9CBD-AC53CF6C8909}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StatsN.IntergrationTests", "src\StatsN.IntergrationTests\StatsN.IntergrationTests.xproj", "{CE3C972F-8563-4B78-B79A-7DD76D6ADC0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +31,10 @@ Global
 		{B8C4A667-73F7-4623-9CBD-AC53CF6C8909}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8C4A667-73F7-4623-9CBD-AC53CF6C8909}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8C4A667-73F7-4623-9CBD-AC53CF6C8909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE3C972F-8563-4B78-B79A-7DD76D6ADC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE3C972F-8563-4B78-B79A-7DD76D6ADC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE3C972F-8563-4B78-B79A-7DD76D6ADC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE3C972F-8563-4B78-B79A-7DD76D6ADC0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -35,5 +42,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1F37D04E-D74F-43EC-ABF1-591A23B26EFD} = {12DA80FB-B934-47BA-897D-AC75FF62F737}
 		{B8C4A667-73F7-4623-9CBD-AC53CF6C8909} = {12DA80FB-B934-47BA-897D-AC75FF62F737}
+		{CE3C972F-8563-4B78-B79A-7DD76D6ADC0A} = {12DA80FB-B934-47BA-897D-AC75FF62F737}
 	EndGlobalSection
 EndGlobal

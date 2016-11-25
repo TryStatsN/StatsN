@@ -32,14 +32,6 @@ namespace StatsN
             /// The number of times each event has been seen.
             /// </summary>
             public const string SET = "s";
-            /// <summary>
-            /// A raw metric that won't be aggregated on the server.
-            /// </summary>
-            public const string RAW = "r";
-            /// <summary>
-            /// A metric that calculates unique hits per hour, day, day-of-week, week or month
-            /// </summary>
-            public const string CALENDARGRAM = "cg";
         }
     }
 }

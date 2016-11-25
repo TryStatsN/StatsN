@@ -7,8 +7,8 @@ namespace StatsN.Exceptions
 {
     public enum EventType
     {
-        info,
-        warning,
-        error
+        Info,
+        Warning,
+        Error
     }
 }

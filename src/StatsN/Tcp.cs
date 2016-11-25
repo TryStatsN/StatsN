@@ -35,7 +35,7 @@ namespace StatsN
                 {
                     Client.ConnectAsync(ipEndpoint.Address, Options.Port).GetAwaiter().GetResult();
                     if (Client.Connected) Stream = Client.GetStream();
-                    return Client.Connected;
+                    return Client.Connected && Stream != null && Stream.CanWrite;
                 }
                 catch (Exception e)
                 {
@@ -49,13 +49,15 @@ namespace StatsN
         public override void OnDispose()
         {
             Client.Dispose();
+            Client = null;
         }
 
         public override Task SendAsync(byte[] payload)
         {
             if(!Client.Connected || !Stream.CanWrite)
             {
-                Options.LogEvent("Tcp Stream not ready to write bytes", Exceptions.EventType.warning);
+                Options.LogEvent("Tcp Stream not ready to write bytes dropping payload on the floor", Exceptions.EventType.Warning);
+                return Task.FromResult(0);
             }
             return Stream.WriteAsync(payload, 0, payload.Length);
         }

@@ -18,24 +18,28 @@ namespace StatsN
         private ConcurrentQueue<byte[]> Queue { get; } = new ConcurrentQueue<byte[]>();
         protected BaseCommunicationProvider()
         {
-            //protoype code to buffer metrics, but at 100000 metrics this code is 3 seconds slower than streaming them as they come in
+            //protoype code to buffer metrics
             worker = new BackgroundWorker();
             worker.DoWork += (a, b) =>
             {
                 try
                 {
-                    var buffer = new List<byte>(512);
+                    var buffer = new List<byte>(Options.BufferSize);
                     byte[] bufferOut;
                     while (Queue.Count > 0)
                     {
                         if (!Queue.TryDequeue(out bufferOut)) continue;
-                        if ((buffer.Count + Constants.newLine.Length + bufferOut.Length) < 512)
+                        if ((buffer.Count + Constants.newLine.Length + bufferOut.Length) < Options.BufferSize)
                         {
-                            buffer.AddRange(Constants.newLine);
+                            if(buffer.Count > 0)
+                            {
+                                buffer.AddRange(Constants.newLine);
+                            }
                             buffer.AddRange(bufferOut);
                         }
                         else
                         {
+                            var stringData = Encoding.UTF8.GetString(buffer.ToArray());
                             SendAsync(buffer.ToArray());
                             buffer.Clear();
                             buffer.AddRange(bufferOut);
@@ -71,11 +75,7 @@ namespace StatsN
                 if (!worker.IsBusy) worker.RunWorkerAsync();
                 return Task.FromResult(0);
             }
-            else
-            {
-                return SendAsync(payload);
-            }
-            
+            return SendAsync(payload);
         }
         public abstract Task SendAsync(byte[] payload);
 
@@ -89,11 +89,11 @@ namespace StatsN
             {
                 try
                 {
-                    ipAddress = (await Dns.GetHostAddressesAsync(hostOrIPAddress).ConfigureAwait(false)).First(p => p.AddressFamily == AddressFamily.InterNetwork || p.AddressFamily == AddressFamily.InterNetworkV6);
+                    ipAddress = (await Dns.GetHostAddressesAsync(hostOrIPAddress).ConfigureAwait(false)).First(p => p.AddressFamily == AddressFamily.InterNetwork);
                 }
                 catch (Exception)
                 {
-                    Options.LogEvent($"Failed to retrieve domain {hostOrIPAddress}", Exceptions.EventType.error);
+                    Options.LogEvent($"Failed to retrieve domain {hostOrIPAddress}", Exceptions.EventType.Error);
                     return null;
                 }
 

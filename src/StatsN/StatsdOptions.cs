@@ -13,6 +13,7 @@ namespace StatsN
         public event EventHandler<string> OnLogEventGenerated;
 
         public bool BufferMetrics { get; set; } = false;
+        public int BufferSize { get; set; } = 512;
         public string HostOrIp { get; set; } = Constants.Localhost;
         public int Port { get; set; } = 8125;
         string prefix = string.Empty;
@@ -33,7 +34,7 @@ namespace StatsN
         {
             if(OnExceptionGenerated == null)
             {
-                LogEvent(exception.Message, EventType.error);
+                LogEvent(exception.Message, EventType.Error);
                 return;
             }
             OnExceptionGenerated.Invoke(this, exception);
@@ -47,13 +48,13 @@ namespace StatsN
                 var traceMessage = $"{Constants.Statsd}: {message}";
                 switch (evntType)
                 {
-                    case EventType.info:
+                    case EventType.Info:
                         Trace.TraceInformation(traceMessage);
                         break;
-                    case EventType.warning:
+                    case EventType.Warning:
                         Trace.TraceWarning(traceMessage);
                         break;
-                    case EventType.error:
+                    case EventType.Error:
                         Trace.TraceError(traceMessage);
                         break;
                 }
