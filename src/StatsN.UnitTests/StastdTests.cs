@@ -74,7 +74,7 @@ namespace StatsN.UnitTests
         [Fact]
         public void ConfirmMetricsBuffered()
         {
-            var mockedMetric = new Mock<TestableChannelProvider>();
+            var mockedMetric = new Mock<NullChannel>();
             mockedMetric.Setup(a => a.IsConnected).Returns(true);
             mockedMetric.Setup(a => a.SendAsync(It.Is<byte[]>(param => param.Length > 200 && param.Length < 512))).Verifiable();
             var statsd = new Statsd(new StatsdOptions() { BufferMetrics = true }, mockedMetric.Object);
@@ -88,7 +88,7 @@ namespace StatsN.UnitTests
         [Fact]
         public void ConfirmMetricsNotBuffered()
         {
-            var mockedMetric = new Mock<TestableChannelProvider>();
+            var mockedMetric = new Mock<NullChannel>();
             mockedMetric.Setup(a => a.IsConnected).Returns(true);
             mockedMetric.Setup(a => a.SendAsync(It.Is<byte[]>(param => param.Length < 50))).Verifiable();
             var statsd = new Statsd(new StatsdOptions() {}, mockedMetric.Object);

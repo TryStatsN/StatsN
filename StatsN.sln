@@ -8,7 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EB96506B-E328-434C-91A0-1035CE5C7CEA}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		Coverage.ps1 = Coverage.ps1
 		global.json = global.json
+		update-projectjson.ps1 = update-projectjson.ps1
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StatsN", "src\StatsN\StatsN.xproj", "{1F37D04E-D74F-43EC-ABF1-591A23B26EFD}"
