@@ -14,7 +14,7 @@ namespace StatsN.UnitTests
         public StastdTests()
         {
             var opt = new StatsdOptions();
-            opt.OnExceptionGenerated += (sender, exception) => { throw exception; };
+            opt.OnExceptionGenerated = (exception) => { throw exception; };
             options = opt;
         }
         [Fact]
@@ -28,48 +28,48 @@ namespace StatsN.UnitTests
         public void ExceptionsShouldBePassed()
         {
             var opt = new StatsdOptions() { HostOrIp = null };
-            opt.OnExceptionGenerated += (sender, exception) => { throw exception; };
+            opt.OnExceptionGenerated = (exception) => { throw exception; };
             Assert.Throws<ArgumentNullException>(() => Statsd.New<NullChannel>(opt));
         }
         [Fact]
         public void BuildMetricPrefixTest()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated = (b) => { throw b; }; });
             var output = statsd.BuildMetric("awesomeMetric.yo", "1", "c", "myPrefix");
             Assert.Equal("myPrefix.awesomeMetric.yo:1|c", output);
         }
         [Fact]
         public void CorrectMetricTypesPassed()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated = (b) => { throw b; }; });
             var output = statsd.BuildMetric("awesomeMetric.yo", "1", "c", "myPrefix");
             Assert.Equal("myPrefix.awesomeMetric.yo:1|c", output);
         }
         [Fact]
         public void BadMetricNamePassed()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated = (b) => { throw b; }; });
             var output = statsd.BuildMetric("", "1", "c", "myPrefix");
             Assert.True(string.IsNullOrEmpty(output));
         }
         [Fact]
         public void BadMetricValuePassed()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated = (b) => { throw b; }; });
             var output = statsd.BuildMetric("yodawg", "", "c", "myPrefix");
             Assert.True(string.IsNullOrEmpty(output));
         }
         [Fact]
         public void BadMetricTypePassed()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated = (b) => { throw b; }; });
             var output = statsd.BuildMetric("yodawg", "1", "", "myPrefix");
             Assert.True(string.IsNullOrEmpty(output));
         }
         [Fact]
         public void BuildMetricTiming()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated = (b) => { throw b; }; });
             var stopwatch = new Stopwatch();
             stopwatch.Start();
             for (int i = 0; i < 100000; i++)
@@ -112,7 +112,8 @@ namespace StatsN.UnitTests
         public void ConfirmUdpSendBuffTime()
         {
             var client = new Udp();
-            var statsd = new Statsd(new StatsdOptions() { BufferMetrics = true }, client);
+            var options = new StatsdOptions() { BufferMetrics = true, OnExceptionGenerated = (exception)=> { throw exception; } };
+            var statsd = new Statsd(options, client);
             var stopwatch = new Stopwatch();
             stopwatch.Start();
             for (int i = 0; i < 100000; i++)
@@ -121,13 +122,14 @@ namespace StatsN.UnitTests
             }
             while (client.worker.IsBusy) { }
             stopwatch.Stop();
-            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 800);
+            //we shouldn't cost more than 1 milisecond a metric buffered or not
+            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 100000);
         }
         [Fact]
         public void ConfirmUdpSendNoBufferedTime()
         {
             var client = new Udp();
-            var statsd = new Statsd(new StatsdOptions() { BufferMetrics = false }, client);
+            var statsd = new Statsd(new StatsdOptions() { BufferMetrics = false, OnExceptionGenerated = (exception) => { throw exception; } }, client);
             var stopwatch = new Stopwatch();
             stopwatch.Start();
             for (int i = 0; i < 100000; i++)
@@ -136,7 +138,8 @@ namespace StatsN.UnitTests
             }
             while (client.worker.IsBusy) { }
             stopwatch.Stop();
-            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 800);
+            //we shouldn't cost more than 1 milisecond a metric buffered or not
+            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 100000);
         }
     }
 }

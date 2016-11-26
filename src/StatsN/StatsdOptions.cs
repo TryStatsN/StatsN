@@ -9,8 +9,8 @@ namespace StatsN
 {
     public class StatsdOptions
     {
-        public event EventHandler<System.Exception> OnExceptionGenerated;
-        public event EventHandler<string> OnLogEventGenerated;
+        public Action<System.Exception> OnExceptionGenerated;
+        public Action<string> OnLogEventGenerated;
 
         public bool BufferMetrics { get; set; } = false;
         public int BufferSize { get; set; } = 512;
@@ -37,7 +37,7 @@ namespace StatsN
                 LogEvent(exception.Message, EventType.Error);
                 return;
             }
-            OnExceptionGenerated.Invoke(this, exception);
+            OnExceptionGenerated.Invoke(exception);
 
             
         }
@@ -61,7 +61,7 @@ namespace StatsN
             }
             else
             {
-                OnLogEventGenerated?.Invoke(this, message);
+                OnLogEventGenerated?.Invoke(message);
             }
         }
     }
