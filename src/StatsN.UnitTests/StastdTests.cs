@@ -10,57 +10,64 @@ namespace StatsN.UnitTests
 {
     public class StastdTests
     {
+        public StatsdOptions options;
+        public StastdTests()
+        {
+            var opt = new StatsdOptions();
+            opt.OnExceptionGenerated += (sender, exception) => { throw exception; };
+            options = opt;
+        }
         [Fact]
         public void BuildMetricNoPrefixTest()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(options);
             var output = statsd.BuildMetric("awesomeMetric.yo", "1", "c");
             Assert.Equal("awesomeMetric.yo:1|c", output);
         }
         [Fact]
         public void ExceptionsShouldBePassed()
         {
-            Assert.Throws<ArgumentNullException>(() => Statsd.New<NullChannel>(a => { a.HostOrIp = null; a.OnExceptionGenerated += (f, b) => { throw b; }; }));
+            Assert.Throws<ArgumentNullException>(() => Statsd.New<NullChannel>(options));
         }
         [Fact]
         public void BuildMetricPrefixTest()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(options);
             var output = statsd.BuildMetric("awesomeMetric.yo", "1", "c", "myPrefix");
             Assert.Equal("myPrefix.awesomeMetric.yo:1|c", output);
         }
         [Fact]
         public void CorrectMetricTypesPassed()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(options);
             var output = statsd.BuildMetric("awesomeMetric.yo", "1", "c", "myPrefix");
             Assert.Equal("myPrefix.awesomeMetric.yo:1|c", output);
         }
         [Fact]
         public void BadMetricNamePassed()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(options);
             var output = statsd.BuildMetric("", "1", "c", "myPrefix");
             Assert.True(string.IsNullOrEmpty(output));
         }
         [Fact]
         public void BadMetricValuePassed()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(options);
             var output = statsd.BuildMetric("yodawg", "", "c", "myPrefix");
             Assert.True(string.IsNullOrEmpty(output));
         }
         [Fact]
         public void BadMetricTypePassed()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(options);
             var output = statsd.BuildMetric("yodawg", "1", "", "myPrefix");
             Assert.True(string.IsNullOrEmpty(output));
         }
         [Fact]
         public void BuildMetricTiming()
         {
-            var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated += (f, b) => { throw b; }; });
+            var statsd = Statsd.New<NullChannel>(options);
             var stopwatch = new Stopwatch();
             stopwatch.Start();
             for (int i = 0; i < 100000; i++)
