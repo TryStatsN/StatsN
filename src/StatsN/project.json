@@ -6,8 +6,13 @@
 
   "frameworks": {
     "net45": {
+      "frameworkAssemblies": {
+        "System.ComponentModel.EventBasedAsync": "4.0.0.0",
+        "System.Diagnostics.Tracing": "4.0.0.0",
+        "System.Dynamic.Runtime": "4.0.0.0"
+      },
       "buildOptions": {
-        "define": ["net45"]
+        "define": [ "net45" ]
       }
     },
     "netstandard1.3": {
