@@ -12,7 +12,7 @@ namespace StatsN
     {
         readonly StatsdOptions options;
 
-        readonly BaseCommunicationProvider _provider;
+        BaseCommunicationProvider _provider;
 
         /// <summary>
         /// Create a new Statsd client
@@ -32,7 +32,9 @@ namespace StatsN
         /// <typeparam name="T">Statsd client to use</typeparam>
         /// <param name="options">client options</param>
         /// <returns></returns>
+#pragma warning disable CC0022 // should dispose
         public static Statsd New<T>(StatsdOptions options) where T: BaseCommunicationProvider, new() => new Statsd(options, new T());
+#pragma warning restore CC0022
         /// <summary>
         /// Create a new Statsd client. Defaults to Udp
         /// </summary>
@@ -137,5 +139,26 @@ namespace StatsN
             }
             return builder.ToString();
         }
+
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    _provider?.Dispose();
+                    _provider = null;
+                }
+                disposedValue = true;
+            }
+        }
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+        #endregion
     }
 }

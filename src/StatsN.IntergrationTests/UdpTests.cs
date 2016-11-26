@@ -15,7 +15,7 @@ namespace StatsN.IntergrationTests
         {
             var options = new StatsdOptions()
             {
-                BufferMetrics = true,
+                BufferMetrics = false,
                 HostOrIp = "127.0.0.1",
                 Port = 8125,
             };
@@ -52,7 +52,7 @@ namespace StatsN.IntergrationTests
                 OnExceptionGenerated = Options_OnExceptionGenerated,
                 OnLogEventGenerated = Options_OnLogEventGenerated
             };
-            var statsd = Statsd.New<Tcp>(options);
+            var statsd = Statsd.New<Udp>(options);
 
             var whenToStop = DateTime.Now.AddMinutes(20);
             var random = new Random();

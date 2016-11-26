@@ -12,7 +12,7 @@ namespace StatsN
     {
 #pragma warning disable CC0052 // Make field readonly
 #pragma warning disable CC0033 // Dispose Fields Properly
-        private TcpClient Client = new TcpClient();
+        private TcpClient Client;
 #pragma warning restore CC0033 // Dispose Fields Properly
 #pragma warning restore CC0052 // Make field readonly
         private NetworkStream Stream;
@@ -24,7 +24,7 @@ namespace StatsN
         {
             get
             {
-                return Client.Connected;
+                return Client?.Connected ?? false;
             }
         }
 
@@ -37,9 +37,11 @@ namespace StatsN
             if (ipEndpoint == null) return false;
             lock (padLock)
             {
-                if (Client.Connected) return true; //this could change since things could q up
+                if (Client?.Connected ?? false) return true; //this could change since things could q up
                 try
                 {
+                    DisposeClient();
+                    Client = new TcpClient();
                     Client.ConnectAsync(this.ipEndpoint.Address, Options.Port).GetAwaiter().GetResult();
                     if (Client.Connected) Stream = Client.GetStream();
                     return Client.Connected && Stream != null && Stream.CanWrite;
@@ -55,13 +57,16 @@ namespace StatsN
 
         public override void OnDispose()
         {
+            DisposeClient();
+        }
+        public void DisposeClient()
+        {
 #if net45
-            Client.Close();
+            Client?.Close();
 #else
-            Client.Dispose();
-            Client = null;
+            Client?.Dispose();
 #endif
-
+            Client = null;
         }
 
         public override async Task SendAsync(byte[] payload)
