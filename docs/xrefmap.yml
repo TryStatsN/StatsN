@@ -1,0 +1,640 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: StatsN
+  name: StatsN
+  href: api/StatsN.html#StatsN
+  commentId: N:StatsN
+  fullName: StatsN
+  nameWithType: StatsN
+- uid: StatsN.BaseCommunicationProvider
+  name: BaseCommunicationProvider
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider
+  commentId: T:StatsN.BaseCommunicationProvider
+  fullName: StatsN.BaseCommunicationProvider
+  nameWithType: BaseCommunicationProvider
+- uid: StatsN.BaseCommunicationProvider.#ctor
+  name: BaseCommunicationProvider()
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider__ctor
+  commentId: M:StatsN.BaseCommunicationProvider.#ctor
+  fullName: StatsN.BaseCommunicationProvider.BaseCommunicationProvider()
+  nameWithType: BaseCommunicationProvider.BaseCommunicationProvider()
+- uid: StatsN.BaseCommunicationProvider.#ctor*
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider__ctor_
+  commentId: Overload:StatsN.BaseCommunicationProvider.#ctor
+  name: BaseCommunicationProvider
+  fullName: StatsN.BaseCommunicationProvider.BaseCommunicationProvider()
+- uid: StatsN.BaseCommunicationProvider.Connect
+  name: Connect()
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_Connect
+  commentId: M:StatsN.BaseCommunicationProvider.Connect
+  fullName: StatsN.BaseCommunicationProvider.Connect()
+  nameWithType: BaseCommunicationProvider.Connect()
+- uid: StatsN.BaseCommunicationProvider.Connect*
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_Connect_
+  commentId: Overload:StatsN.BaseCommunicationProvider.Connect
+  name: Connect
+  fullName: StatsN.BaseCommunicationProvider.Connect()
+- uid: StatsN.BaseCommunicationProvider.Dispose
+  name: Dispose()
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_Dispose
+  commentId: M:StatsN.BaseCommunicationProvider.Dispose
+  fullName: StatsN.BaseCommunicationProvider.Dispose()
+  nameWithType: BaseCommunicationProvider.Dispose()
+- uid: StatsN.BaseCommunicationProvider.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_Dispose_System_Boolean_
+  commentId: M:StatsN.BaseCommunicationProvider.Dispose(System.Boolean)
+  fullName: StatsN.BaseCommunicationProvider.Dispose(System.Boolean)
+  nameWithType: BaseCommunicationProvider.Dispose(Boolean)
+- uid: StatsN.BaseCommunicationProvider.Dispose*
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_Dispose_
+  commentId: Overload:StatsN.BaseCommunicationProvider.Dispose
+  name: Dispose
+  fullName: StatsN.BaseCommunicationProvider.Dispose(System.Boolean)
+- uid: StatsN.BaseCommunicationProvider.GetIpAddressAsync
+  name: GetIpAddressAsync()
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_GetIpAddressAsync
+  commentId: M:StatsN.BaseCommunicationProvider.GetIpAddressAsync
+  fullName: StatsN.BaseCommunicationProvider.GetIpAddressAsync()
+  nameWithType: BaseCommunicationProvider.GetIpAddressAsync()
+- uid: StatsN.BaseCommunicationProvider.GetIpAddressAsync(System.String,System.Int32)
+  name: GetIpAddressAsync(String, Int32)
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_GetIpAddressAsync_System_String_System_Int32_
+  commentId: M:StatsN.BaseCommunicationProvider.GetIpAddressAsync(System.String,System.Int32)
+  fullName: StatsN.BaseCommunicationProvider.GetIpAddressAsync(System.String, System.Int32)
+  nameWithType: BaseCommunicationProvider.GetIpAddressAsync(String, Int32)
+- uid: StatsN.BaseCommunicationProvider.GetIpAddressAsync*
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_GetIpAddressAsync_
+  commentId: Overload:StatsN.BaseCommunicationProvider.GetIpAddressAsync
+  name: GetIpAddressAsync
+  fullName: StatsN.BaseCommunicationProvider.GetIpAddressAsync()
+- uid: StatsN.BaseCommunicationProvider.IsConnected
+  name: IsConnected
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_IsConnected
+  commentId: P:StatsN.BaseCommunicationProvider.IsConnected
+  fullName: StatsN.BaseCommunicationProvider.IsConnected
+  nameWithType: BaseCommunicationProvider.IsConnected
+- uid: StatsN.BaseCommunicationProvider.IsConnected*
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_IsConnected_
+  commentId: Overload:StatsN.BaseCommunicationProvider.IsConnected
+  name: IsConnected
+  fullName: StatsN.BaseCommunicationProvider.IsConnected
+- uid: StatsN.BaseCommunicationProvider.OnDispose
+  name: OnDispose()
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_OnDispose
+  commentId: M:StatsN.BaseCommunicationProvider.OnDispose
+  fullName: StatsN.BaseCommunicationProvider.OnDispose()
+  nameWithType: BaseCommunicationProvider.OnDispose()
+- uid: StatsN.BaseCommunicationProvider.OnDispose*
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_OnDispose_
+  commentId: Overload:StatsN.BaseCommunicationProvider.OnDispose
+  name: OnDispose
+  fullName: StatsN.BaseCommunicationProvider.OnDispose()
+- uid: StatsN.BaseCommunicationProvider.Options
+  name: Options
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_Options
+  commentId: P:StatsN.BaseCommunicationProvider.Options
+  fullName: StatsN.BaseCommunicationProvider.Options
+  nameWithType: BaseCommunicationProvider.Options
+- uid: StatsN.BaseCommunicationProvider.Options*
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_Options_
+  commentId: Overload:StatsN.BaseCommunicationProvider.Options
+  name: Options
+  fullName: StatsN.BaseCommunicationProvider.Options
+- uid: StatsN.BaseCommunicationProvider.SendAsync(System.Byte[])
+  name: SendAsync(Byte[])
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_SendAsync_System_Byte___
+  commentId: M:StatsN.BaseCommunicationProvider.SendAsync(System.Byte[])
+  name.vb: SendAsync(Byte())
+  fullName: StatsN.BaseCommunicationProvider.SendAsync(System.Byte[])
+  fullName.vb: StatsN.BaseCommunicationProvider.SendAsync(System.Byte())
+  nameWithType: BaseCommunicationProvider.SendAsync(Byte[])
+  nameWithType.vb: SendAsync(Byte())
+- uid: StatsN.BaseCommunicationProvider.SendAsync*
+  href: api/StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider_SendAsync_
+  commentId: Overload:StatsN.BaseCommunicationProvider.SendAsync
+  name: SendAsync
+  name.vb: SendAsync
+  fullName: StatsN.BaseCommunicationProvider.SendAsync(System.Byte[])
+  fullName.vb: StatsN.BaseCommunicationProvider.SendAsync
+- uid: StatsN.Exceptions
+  name: StatsN.Exceptions
+  href: api/StatsN.Exceptions.html#StatsN_Exceptions
+  commentId: N:StatsN.Exceptions
+  fullName: StatsN.Exceptions
+  nameWithType: StatsN.Exceptions
+- uid: StatsN.Exceptions.EventType
+  name: EventType
+  href: api/StatsN.Exceptions.EventType.html#StatsN_Exceptions_EventType
+  commentId: T:StatsN.Exceptions.EventType
+  fullName: StatsN.Exceptions.EventType
+  nameWithType: EventType
+- uid: StatsN.Exceptions.EventType.Error
+  name: Error
+  href: api/StatsN.Exceptions.EventType.html#StatsN_Exceptions_EventType_Error
+  commentId: F:StatsN.Exceptions.EventType.Error
+  fullName: StatsN.Exceptions.EventType.Error
+  nameWithType: EventType.Error
+- uid: StatsN.Exceptions.EventType.Info
+  name: Info
+  href: api/StatsN.Exceptions.EventType.html#StatsN_Exceptions_EventType_Info
+  commentId: F:StatsN.Exceptions.EventType.Info
+  fullName: StatsN.Exceptions.EventType.Info
+  nameWithType: EventType.Info
+- uid: StatsN.Exceptions.EventType.Warning
+  name: Warning
+  href: api/StatsN.Exceptions.EventType.html#StatsN_Exceptions_EventType_Warning
+  commentId: F:StatsN.Exceptions.EventType.Warning
+  fullName: StatsN.Exceptions.EventType.Warning
+  nameWithType: EventType.Warning
+- uid: StatsN.Exceptions.StatsdLogMessage
+  name: StatsdLogMessage
+  href: api/StatsN.Exceptions.StatsdLogMessage.html#StatsN_Exceptions_StatsdLogMessage
+  commentId: T:StatsN.Exceptions.StatsdLogMessage
+  fullName: StatsN.Exceptions.StatsdLogMessage
+  nameWithType: StatsdLogMessage
+- uid: StatsN.Exceptions.StatsdLogMessage.#ctor(System.String,StatsN.Exceptions.EventType)
+  name: StatsdLogMessage(String, EventType)
+  href: api/StatsN.Exceptions.StatsdLogMessage.html#StatsN_Exceptions_StatsdLogMessage__ctor_System_String_StatsN_Exceptions_EventType_
+  commentId: M:StatsN.Exceptions.StatsdLogMessage.#ctor(System.String,StatsN.Exceptions.EventType)
+  fullName: StatsN.Exceptions.StatsdLogMessage.StatsdLogMessage(System.String, StatsN.Exceptions.EventType)
+  nameWithType: StatsdLogMessage.StatsdLogMessage(String, EventType)
+- uid: StatsN.Exceptions.StatsdLogMessage.#ctor*
+  href: api/StatsN.Exceptions.StatsdLogMessage.html#StatsN_Exceptions_StatsdLogMessage__ctor_
+  commentId: Overload:StatsN.Exceptions.StatsdLogMessage.#ctor
+  name: StatsdLogMessage
+  fullName: StatsN.Exceptions.StatsdLogMessage.StatsdLogMessage(System.String, StatsN.Exceptions.EventType)
+- uid: StatsN.Exceptions.StatsdLogMessage.Message
+  name: Message
+  href: api/StatsN.Exceptions.StatsdLogMessage.html#StatsN_Exceptions_StatsdLogMessage_Message
+  commentId: P:StatsN.Exceptions.StatsdLogMessage.Message
+  fullName: StatsN.Exceptions.StatsdLogMessage.Message
+  nameWithType: StatsdLogMessage.Message
+- uid: StatsN.Exceptions.StatsdLogMessage.Message*
+  href: api/StatsN.Exceptions.StatsdLogMessage.html#StatsN_Exceptions_StatsdLogMessage_Message_
+  commentId: Overload:StatsN.Exceptions.StatsdLogMessage.Message
+  name: Message
+  fullName: StatsN.Exceptions.StatsdLogMessage.Message
+- uid: StatsN.Exceptions.StatsdLogMessage.Weight
+  name: Weight
+  href: api/StatsN.Exceptions.StatsdLogMessage.html#StatsN_Exceptions_StatsdLogMessage_Weight
+  commentId: P:StatsN.Exceptions.StatsdLogMessage.Weight
+  fullName: StatsN.Exceptions.StatsdLogMessage.Weight
+  nameWithType: StatsdLogMessage.Weight
+- uid: StatsN.Exceptions.StatsdLogMessage.Weight*
+  href: api/StatsN.Exceptions.StatsdLogMessage.html#StatsN_Exceptions_StatsdLogMessage_Weight_
+  commentId: Overload:StatsN.Exceptions.StatsdLogMessage.Weight
+  name: Weight
+  fullName: StatsN.Exceptions.StatsdLogMessage.Weight
+- uid: StatsN.IStatsd
+  name: IStatsd
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd
+  commentId: T:StatsN.IStatsd
+  fullName: StatsN.IStatsd
+  nameWithType: IStatsd
+- uid: StatsN.IStatsd.CountAsync(System.String,System.Int64)
+  name: CountAsync(String, Int64)
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_CountAsync_System_String_System_Int64_
+  commentId: M:StatsN.IStatsd.CountAsync(System.String,System.Int64)
+  fullName: StatsN.IStatsd.CountAsync(System.String, System.Int64)
+  nameWithType: IStatsd.CountAsync(String, Int64)
+- uid: StatsN.IStatsd.CountAsync*
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_CountAsync_
+  commentId: Overload:StatsN.IStatsd.CountAsync
+  name: CountAsync
+  fullName: StatsN.IStatsd.CountAsync(System.String, System.Int64)
+- uid: StatsN.IStatsd.GaugeAsync(System.String,System.Int64)
+  name: GaugeAsync(String, Int64)
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_GaugeAsync_System_String_System_Int64_
+  commentId: M:StatsN.IStatsd.GaugeAsync(System.String,System.Int64)
+  fullName: StatsN.IStatsd.GaugeAsync(System.String, System.Int64)
+  nameWithType: IStatsd.GaugeAsync(String, Int64)
+- uid: StatsN.IStatsd.GaugeAsync*
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_GaugeAsync_
+  commentId: Overload:StatsN.IStatsd.GaugeAsync
+  name: GaugeAsync
+  fullName: StatsN.IStatsd.GaugeAsync(System.String, System.Int64)
+- uid: StatsN.IStatsd.GaugeDeltaAsync(System.String,System.Int64)
+  name: GaugeDeltaAsync(String, Int64)
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_GaugeDeltaAsync_System_String_System_Int64_
+  commentId: M:StatsN.IStatsd.GaugeDeltaAsync(System.String,System.Int64)
+  fullName: StatsN.IStatsd.GaugeDeltaAsync(System.String, System.Int64)
+  nameWithType: IStatsd.GaugeDeltaAsync(String, Int64)
+- uid: StatsN.IStatsd.GaugeDeltaAsync*
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_GaugeDeltaAsync_
+  commentId: Overload:StatsN.IStatsd.GaugeDeltaAsync
+  name: GaugeDeltaAsync
+  fullName: StatsN.IStatsd.GaugeDeltaAsync(System.String, System.Int64)
+- uid: StatsN.IStatsd.SetAsync(System.String,System.Int64)
+  name: SetAsync(String, Int64)
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_SetAsync_System_String_System_Int64_
+  commentId: M:StatsN.IStatsd.SetAsync(System.String,System.Int64)
+  fullName: StatsN.IStatsd.SetAsync(System.String, System.Int64)
+  nameWithType: IStatsd.SetAsync(String, Int64)
+- uid: StatsN.IStatsd.SetAsync*
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_SetAsync_
+  commentId: Overload:StatsN.IStatsd.SetAsync
+  name: SetAsync
+  fullName: StatsN.IStatsd.SetAsync(System.String, System.Int64)
+- uid: StatsN.IStatsd.TimingAsync(System.String,System.Action)
+  name: TimingAsync(String, Action)
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_TimingAsync_System_String_System_Action_
+  commentId: M:StatsN.IStatsd.TimingAsync(System.String,System.Action)
+  fullName: StatsN.IStatsd.TimingAsync(System.String, System.Action)
+  nameWithType: IStatsd.TimingAsync(String, Action)
+- uid: StatsN.IStatsd.TimingAsync(System.String,System.Int64)
+  name: TimingAsync(String, Int64)
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_TimingAsync_System_String_System_Int64_
+  commentId: M:StatsN.IStatsd.TimingAsync(System.String,System.Int64)
+  fullName: StatsN.IStatsd.TimingAsync(System.String, System.Int64)
+  nameWithType: IStatsd.TimingAsync(String, Int64)
+- uid: StatsN.IStatsd.TimingAsync*
+  href: api/StatsN.IStatsd.html#StatsN_IStatsd_TimingAsync_
+  commentId: Overload:StatsN.IStatsd.TimingAsync
+  name: TimingAsync
+  fullName: StatsN.IStatsd.TimingAsync(System.String, System.Int64)
+- uid: StatsN.NullChannel
+  name: NullChannel
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel
+  commentId: T:StatsN.NullChannel
+  fullName: StatsN.NullChannel
+  nameWithType: NullChannel
+- uid: StatsN.NullChannel.Connect
+  name: Connect()
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel_Connect
+  commentId: M:StatsN.NullChannel.Connect
+  fullName: StatsN.NullChannel.Connect()
+  nameWithType: NullChannel.Connect()
+- uid: StatsN.NullChannel.Connect*
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel_Connect_
+  commentId: Overload:StatsN.NullChannel.Connect
+  name: Connect
+  fullName: StatsN.NullChannel.Connect()
+- uid: StatsN.NullChannel.IsConnected
+  name: IsConnected
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel_IsConnected
+  commentId: P:StatsN.NullChannel.IsConnected
+  fullName: StatsN.NullChannel.IsConnected
+  nameWithType: NullChannel.IsConnected
+- uid: StatsN.NullChannel.IsConnected*
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel_IsConnected_
+  commentId: Overload:StatsN.NullChannel.IsConnected
+  name: IsConnected
+  fullName: StatsN.NullChannel.IsConnected
+- uid: StatsN.NullChannel.OnDispose
+  name: OnDispose()
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel_OnDispose
+  commentId: M:StatsN.NullChannel.OnDispose
+  fullName: StatsN.NullChannel.OnDispose()
+  nameWithType: NullChannel.OnDispose()
+- uid: StatsN.NullChannel.OnDispose*
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel_OnDispose_
+  commentId: Overload:StatsN.NullChannel.OnDispose
+  name: OnDispose
+  fullName: StatsN.NullChannel.OnDispose()
+- uid: StatsN.NullChannel.SendAsync(System.Byte[])
+  name: SendAsync(Byte[])
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel_SendAsync_System_Byte___
+  commentId: M:StatsN.NullChannel.SendAsync(System.Byte[])
+  name.vb: SendAsync(Byte())
+  fullName: StatsN.NullChannel.SendAsync(System.Byte[])
+  fullName.vb: StatsN.NullChannel.SendAsync(System.Byte())
+  nameWithType: NullChannel.SendAsync(Byte[])
+  nameWithType.vb: SendAsync(Byte())
+- uid: StatsN.NullChannel.SendAsync*
+  href: api/StatsN.NullChannel.html#StatsN_NullChannel_SendAsync_
+  commentId: Overload:StatsN.NullChannel.SendAsync
+  name: SendAsync
+  name.vb: SendAsync
+  fullName: StatsN.NullChannel.SendAsync(System.Byte[])
+  fullName.vb: StatsN.NullChannel.SendAsync
+- uid: StatsN.Statsd
+  name: Statsd
+  href: api/StatsN.Statsd.html#StatsN_Statsd
+  commentId: T:StatsN.Statsd
+  fullName: StatsN.Statsd
+  nameWithType: Statsd
+- uid: StatsN.Statsd.#ctor(StatsN.StatsdOptions,StatsN.BaseCommunicationProvider)
+  name: Statsd(StatsdOptions, BaseCommunicationProvider)
+  href: api/StatsN.Statsd.html#StatsN_Statsd__ctor_StatsN_StatsdOptions_StatsN_BaseCommunicationProvider_
+  commentId: M:StatsN.Statsd.#ctor(StatsN.StatsdOptions,StatsN.BaseCommunicationProvider)
+  fullName: StatsN.Statsd.Statsd(StatsN.StatsdOptions, StatsN.BaseCommunicationProvider)
+  nameWithType: Statsd.Statsd(StatsdOptions, BaseCommunicationProvider)
+- uid: StatsN.Statsd.#ctor*
+  href: api/StatsN.Statsd.html#StatsN_Statsd__ctor_
+  commentId: Overload:StatsN.Statsd.#ctor
+  name: Statsd
+  fullName: StatsN.Statsd.Statsd(StatsN.StatsdOptions, StatsN.BaseCommunicationProvider)
+- uid: StatsN.Statsd.CountAsync(System.String,System.Int64)
+  name: CountAsync(String, Int64)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_CountAsync_System_String_System_Int64_
+  commentId: M:StatsN.Statsd.CountAsync(System.String,System.Int64)
+  fullName: StatsN.Statsd.CountAsync(System.String, System.Int64)
+  nameWithType: Statsd.CountAsync(String, Int64)
+- uid: StatsN.Statsd.CountAsync*
+  href: api/StatsN.Statsd.html#StatsN_Statsd_CountAsync_
+  commentId: Overload:StatsN.Statsd.CountAsync
+  name: CountAsync
+  fullName: StatsN.Statsd.CountAsync(System.String, System.Int64)
+- uid: StatsN.Statsd.Dispose
+  name: Dispose()
+  href: api/StatsN.Statsd.html#StatsN_Statsd_Dispose
+  commentId: M:StatsN.Statsd.Dispose
+  fullName: StatsN.Statsd.Dispose()
+  nameWithType: Statsd.Dispose()
+- uid: StatsN.Statsd.Dispose(System.Boolean)
+  name: Dispose(Boolean)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_Dispose_System_Boolean_
+  commentId: M:StatsN.Statsd.Dispose(System.Boolean)
+  fullName: StatsN.Statsd.Dispose(System.Boolean)
+  nameWithType: Statsd.Dispose(Boolean)
+- uid: StatsN.Statsd.Dispose*
+  href: api/StatsN.Statsd.html#StatsN_Statsd_Dispose_
+  commentId: Overload:StatsN.Statsd.Dispose
+  name: Dispose
+  fullName: StatsN.Statsd.Dispose(System.Boolean)
+- uid: StatsN.Statsd.GaugeAsync(System.String,System.Int64)
+  name: GaugeAsync(String, Int64)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_GaugeAsync_System_String_System_Int64_
+  commentId: M:StatsN.Statsd.GaugeAsync(System.String,System.Int64)
+  fullName: StatsN.Statsd.GaugeAsync(System.String, System.Int64)
+  nameWithType: Statsd.GaugeAsync(String, Int64)
+- uid: StatsN.Statsd.GaugeAsync*
+  href: api/StatsN.Statsd.html#StatsN_Statsd_GaugeAsync_
+  commentId: Overload:StatsN.Statsd.GaugeAsync
+  name: GaugeAsync
+  fullName: StatsN.Statsd.GaugeAsync(System.String, System.Int64)
+- uid: StatsN.Statsd.GaugeDeltaAsync(System.String,System.Int64)
+  name: GaugeDeltaAsync(String, Int64)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_GaugeDeltaAsync_System_String_System_Int64_
+  commentId: M:StatsN.Statsd.GaugeDeltaAsync(System.String,System.Int64)
+  fullName: StatsN.Statsd.GaugeDeltaAsync(System.String, System.Int64)
+  nameWithType: Statsd.GaugeDeltaAsync(String, Int64)
+- uid: StatsN.Statsd.GaugeDeltaAsync*
+  href: api/StatsN.Statsd.html#StatsN_Statsd_GaugeDeltaAsync_
+  commentId: Overload:StatsN.Statsd.GaugeDeltaAsync
+  name: GaugeDeltaAsync
+  fullName: StatsN.Statsd.GaugeDeltaAsync(System.String, System.Int64)
+- uid: StatsN.Statsd.New(StatsN.StatsdOptions)
+  name: New(StatsdOptions)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_New_StatsN_StatsdOptions_
+  commentId: M:StatsN.Statsd.New(StatsN.StatsdOptions)
+  fullName: StatsN.Statsd.New(StatsN.StatsdOptions)
+  nameWithType: Statsd.New(StatsdOptions)
+- uid: StatsN.Statsd.New(System.Action{StatsN.StatsdOptions})
+  name: New(Action<StatsdOptions>)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_New_System_Action_StatsN_StatsdOptions__
+  commentId: M:StatsN.Statsd.New(System.Action{StatsN.StatsdOptions})
+  name.vb: New(Action(Of StatsdOptions))
+  fullName: StatsN.Statsd.New(System.Action<StatsN.StatsdOptions>)
+  fullName.vb: StatsN.Statsd.New(System.Action(Of StatsN.StatsdOptions))
+  nameWithType: Statsd.New(Action<StatsdOptions>)
+  nameWithType.vb: New(Action(Of StatsdOptions))
+- uid: StatsN.Statsd.New*
+  href: api/StatsN.Statsd.html#StatsN_Statsd_New_
+  commentId: Overload:StatsN.Statsd.New
+  name: New<T>
+  name.vb: New
+  fullName: StatsN.Statsd.New<T>(System.Action<StatsN.StatsdOptions>)
+  fullName.vb: StatsN.Statsd.New
+- uid: StatsN.Statsd.New``1(StatsN.StatsdOptions)
+  name: New<T>(StatsdOptions)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_New__1_StatsN_StatsdOptions_
+  commentId: M:StatsN.Statsd.New``1(StatsN.StatsdOptions)
+  name.vb: New(Of T)(StatsdOptions)
+  fullName: StatsN.Statsd.New<T>(StatsN.StatsdOptions)
+  fullName.vb: StatsN.Statsd.New(Of T)(StatsN.StatsdOptions)
+  nameWithType: Statsd.New<T>(StatsdOptions)
+  nameWithType.vb: New(Of T)(StatsdOptions)
+- uid: StatsN.Statsd.New``1(System.Action{StatsN.StatsdOptions})
+  name: New<T>(Action<StatsdOptions>)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_New__1_System_Action_StatsN_StatsdOptions__
+  commentId: M:StatsN.Statsd.New``1(System.Action{StatsN.StatsdOptions})
+  name.vb: New(Of T)(Action(Of StatsdOptions))
+  fullName: StatsN.Statsd.New<T>(System.Action<StatsN.StatsdOptions>)
+  fullName.vb: StatsN.Statsd.New(Of T)(System.Action(Of StatsN.StatsdOptions))
+  nameWithType: Statsd.New<T>(Action<StatsdOptions>)
+  nameWithType.vb: New(Of T)(Action(Of StatsdOptions))
+- uid: StatsN.Statsd.SetAsync(System.String,System.Int64)
+  name: SetAsync(String, Int64)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_SetAsync_System_String_System_Int64_
+  commentId: M:StatsN.Statsd.SetAsync(System.String,System.Int64)
+  fullName: StatsN.Statsd.SetAsync(System.String, System.Int64)
+  nameWithType: Statsd.SetAsync(String, Int64)
+- uid: StatsN.Statsd.SetAsync*
+  href: api/StatsN.Statsd.html#StatsN_Statsd_SetAsync_
+  commentId: Overload:StatsN.Statsd.SetAsync
+  name: SetAsync
+  fullName: StatsN.Statsd.SetAsync(System.String, System.Int64)
+- uid: StatsN.Statsd.TimingAsync(System.String,System.Action)
+  name: TimingAsync(String, Action)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_TimingAsync_System_String_System_Action_
+  commentId: M:StatsN.Statsd.TimingAsync(System.String,System.Action)
+  fullName: StatsN.Statsd.TimingAsync(System.String, System.Action)
+  nameWithType: Statsd.TimingAsync(String, Action)
+- uid: StatsN.Statsd.TimingAsync(System.String,System.Int64)
+  name: TimingAsync(String, Int64)
+  href: api/StatsN.Statsd.html#StatsN_Statsd_TimingAsync_System_String_System_Int64_
+  commentId: M:StatsN.Statsd.TimingAsync(System.String,System.Int64)
+  fullName: StatsN.Statsd.TimingAsync(System.String, System.Int64)
+  nameWithType: Statsd.TimingAsync(String, Int64)
+- uid: StatsN.Statsd.TimingAsync*
+  href: api/StatsN.Statsd.html#StatsN_Statsd_TimingAsync_
+  commentId: Overload:StatsN.Statsd.TimingAsync
+  name: TimingAsync
+  fullName: StatsN.Statsd.TimingAsync(System.String, System.Int64)
+- uid: StatsN.StatsdOptions
+  name: StatsdOptions
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions
+  commentId: T:StatsN.StatsdOptions
+  fullName: StatsN.StatsdOptions
+  nameWithType: StatsdOptions
+- uid: StatsN.StatsdOptions.BufferMetrics
+  name: BufferMetrics
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_BufferMetrics
+  commentId: P:StatsN.StatsdOptions.BufferMetrics
+  fullName: StatsN.StatsdOptions.BufferMetrics
+  nameWithType: StatsdOptions.BufferMetrics
+- uid: StatsN.StatsdOptions.BufferMetrics*
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_BufferMetrics_
+  commentId: Overload:StatsN.StatsdOptions.BufferMetrics
+  name: BufferMetrics
+  fullName: StatsN.StatsdOptions.BufferMetrics
+- uid: StatsN.StatsdOptions.BufferSize
+  name: BufferSize
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_BufferSize
+  commentId: P:StatsN.StatsdOptions.BufferSize
+  fullName: StatsN.StatsdOptions.BufferSize
+  nameWithType: StatsdOptions.BufferSize
+- uid: StatsN.StatsdOptions.BufferSize*
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_BufferSize_
+  commentId: Overload:StatsN.StatsdOptions.BufferSize
+  name: BufferSize
+  fullName: StatsN.StatsdOptions.BufferSize
+- uid: StatsN.StatsdOptions.HostOrIp
+  name: HostOrIp
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_HostOrIp
+  commentId: P:StatsN.StatsdOptions.HostOrIp
+  fullName: StatsN.StatsdOptions.HostOrIp
+  nameWithType: StatsdOptions.HostOrIp
+- uid: StatsN.StatsdOptions.HostOrIp*
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_HostOrIp_
+  commentId: Overload:StatsN.StatsdOptions.HostOrIp
+  name: HostOrIp
+  fullName: StatsN.StatsdOptions.HostOrIp
+- uid: StatsN.StatsdOptions.OnExceptionGenerated
+  name: OnExceptionGenerated
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_OnExceptionGenerated
+  commentId: F:StatsN.StatsdOptions.OnExceptionGenerated
+  fullName: StatsN.StatsdOptions.OnExceptionGenerated
+  nameWithType: StatsdOptions.OnExceptionGenerated
+- uid: StatsN.StatsdOptions.OnLogEventGenerated
+  name: OnLogEventGenerated
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_OnLogEventGenerated
+  commentId: F:StatsN.StatsdOptions.OnLogEventGenerated
+  fullName: StatsN.StatsdOptions.OnLogEventGenerated
+  nameWithType: StatsdOptions.OnLogEventGenerated
+- uid: StatsN.StatsdOptions.Port
+  name: Port
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_Port
+  commentId: P:StatsN.StatsdOptions.Port
+  fullName: StatsN.StatsdOptions.Port
+  nameWithType: StatsdOptions.Port
+- uid: StatsN.StatsdOptions.Port*
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_Port_
+  commentId: Overload:StatsN.StatsdOptions.Port
+  name: Port
+  fullName: StatsN.StatsdOptions.Port
+- uid: StatsN.StatsdOptions.Prefix
+  name: Prefix
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_Prefix
+  commentId: P:StatsN.StatsdOptions.Prefix
+  fullName: StatsN.StatsdOptions.Prefix
+  nameWithType: StatsdOptions.Prefix
+- uid: StatsN.StatsdOptions.Prefix*
+  href: api/StatsN.StatsdOptions.html#StatsN_StatsdOptions_Prefix_
+  commentId: Overload:StatsN.StatsdOptions.Prefix
+  name: Prefix
+  fullName: StatsN.StatsdOptions.Prefix
+- uid: StatsN.Tcp
+  name: Tcp
+  href: api/StatsN.Tcp.html#StatsN_Tcp
+  commentId: T:StatsN.Tcp
+  fullName: StatsN.Tcp
+  nameWithType: Tcp
+- uid: StatsN.Tcp.Connect
+  name: Connect()
+  href: api/StatsN.Tcp.html#StatsN_Tcp_Connect
+  commentId: M:StatsN.Tcp.Connect
+  fullName: StatsN.Tcp.Connect()
+  nameWithType: Tcp.Connect()
+- uid: StatsN.Tcp.Connect*
+  href: api/StatsN.Tcp.html#StatsN_Tcp_Connect_
+  commentId: Overload:StatsN.Tcp.Connect
+  name: Connect
+  fullName: StatsN.Tcp.Connect()
+- uid: StatsN.Tcp.DisposeClient
+  name: DisposeClient()
+  href: api/StatsN.Tcp.html#StatsN_Tcp_DisposeClient
+  commentId: M:StatsN.Tcp.DisposeClient
+  fullName: StatsN.Tcp.DisposeClient()
+  nameWithType: Tcp.DisposeClient()
+- uid: StatsN.Tcp.DisposeClient*
+  href: api/StatsN.Tcp.html#StatsN_Tcp_DisposeClient_
+  commentId: Overload:StatsN.Tcp.DisposeClient
+  name: DisposeClient
+  fullName: StatsN.Tcp.DisposeClient()
+- uid: StatsN.Tcp.IsConnected
+  name: IsConnected
+  href: api/StatsN.Tcp.html#StatsN_Tcp_IsConnected
+  commentId: P:StatsN.Tcp.IsConnected
+  fullName: StatsN.Tcp.IsConnected
+  nameWithType: Tcp.IsConnected
+- uid: StatsN.Tcp.IsConnected*
+  href: api/StatsN.Tcp.html#StatsN_Tcp_IsConnected_
+  commentId: Overload:StatsN.Tcp.IsConnected
+  name: IsConnected
+  fullName: StatsN.Tcp.IsConnected
+- uid: StatsN.Tcp.OnDispose
+  name: OnDispose()
+  href: api/StatsN.Tcp.html#StatsN_Tcp_OnDispose
+  commentId: M:StatsN.Tcp.OnDispose
+  fullName: StatsN.Tcp.OnDispose()
+  nameWithType: Tcp.OnDispose()
+- uid: StatsN.Tcp.OnDispose*
+  href: api/StatsN.Tcp.html#StatsN_Tcp_OnDispose_
+  commentId: Overload:StatsN.Tcp.OnDispose
+  name: OnDispose
+  fullName: StatsN.Tcp.OnDispose()
+- uid: StatsN.Tcp.SendAsync(System.Byte[])
+  name: SendAsync(Byte[])
+  href: api/StatsN.Tcp.html#StatsN_Tcp_SendAsync_System_Byte___
+  commentId: M:StatsN.Tcp.SendAsync(System.Byte[])
+  name.vb: SendAsync(Byte())
+  fullName: StatsN.Tcp.SendAsync(System.Byte[])
+  fullName.vb: StatsN.Tcp.SendAsync(System.Byte())
+  nameWithType: Tcp.SendAsync(Byte[])
+  nameWithType.vb: SendAsync(Byte())
+- uid: StatsN.Tcp.SendAsync*
+  href: api/StatsN.Tcp.html#StatsN_Tcp_SendAsync_
+  commentId: Overload:StatsN.Tcp.SendAsync
+  name: SendAsync
+  name.vb: SendAsync
+  fullName: StatsN.Tcp.SendAsync(System.Byte[])
+  fullName.vb: StatsN.Tcp.SendAsync
+- uid: StatsN.Udp
+  name: Udp
+  href: api/StatsN.Udp.html#StatsN_Udp
+  commentId: T:StatsN.Udp
+  fullName: StatsN.Udp
+  nameWithType: Udp
+- uid: StatsN.Udp.Connect
+  name: Connect()
+  href: api/StatsN.Udp.html#StatsN_Udp_Connect
+  commentId: M:StatsN.Udp.Connect
+  fullName: StatsN.Udp.Connect()
+  nameWithType: Udp.Connect()
+- uid: StatsN.Udp.Connect*
+  href: api/StatsN.Udp.html#StatsN_Udp_Connect_
+  commentId: Overload:StatsN.Udp.Connect
+  name: Connect
+  fullName: StatsN.Udp.Connect()
+- uid: StatsN.Udp.IsConnected
+  name: IsConnected
+  href: api/StatsN.Udp.html#StatsN_Udp_IsConnected
+  commentId: P:StatsN.Udp.IsConnected
+  fullName: StatsN.Udp.IsConnected
+  nameWithType: Udp.IsConnected
+- uid: StatsN.Udp.IsConnected*
+  href: api/StatsN.Udp.html#StatsN_Udp_IsConnected_
+  commentId: Overload:StatsN.Udp.IsConnected
+  name: IsConnected
+  fullName: StatsN.Udp.IsConnected
+- uid: StatsN.Udp.OnDispose
+  name: OnDispose()
+  href: api/StatsN.Udp.html#StatsN_Udp_OnDispose
+  commentId: M:StatsN.Udp.OnDispose
+  fullName: StatsN.Udp.OnDispose()
+  nameWithType: Udp.OnDispose()
+- uid: StatsN.Udp.OnDispose*
+  href: api/StatsN.Udp.html#StatsN_Udp_OnDispose_
+  commentId: Overload:StatsN.Udp.OnDispose
+  name: OnDispose
+  fullName: StatsN.Udp.OnDispose()
+- uid: StatsN.Udp.SendAsync(System.Byte[])
+  name: SendAsync(Byte[])
+  href: api/StatsN.Udp.html#StatsN_Udp_SendAsync_System_Byte___
+  commentId: M:StatsN.Udp.SendAsync(System.Byte[])
+  name.vb: SendAsync(Byte())
+  fullName: StatsN.Udp.SendAsync(System.Byte[])
+  fullName.vb: StatsN.Udp.SendAsync(System.Byte())
+  nameWithType: Udp.SendAsync(Byte[])
+  nameWithType.vb: SendAsync(Byte())
+- uid: StatsN.Udp.SendAsync*
+  href: api/StatsN.Udp.html#StatsN_Udp_SendAsync_
+  commentId: Overload:StatsN.Udp.SendAsync
+  name: SendAsync
+  name.vb: SendAsync
+  fullName: StatsN.Udp.SendAsync(System.Byte[])
+  fullName.vb: StatsN.Udp.SendAsync

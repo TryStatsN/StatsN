@@ -1,0 +1,773 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Statsd
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Statsd
+   ">
+    <meta name="generator" content="docfx 2.7.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content">
+              
+              
+              <h1 id="StatsN_Statsd" data-uid="StatsN.Statsd">Class Statsd
+              </h1>
+              <div class="markdown level0 summary"></div>
+              <div class="markdown level0 conceptual"></div>
+              <div class="inheritance">
+                <h5>Inheritance</h5>
+                  <div class="level0"><span class="xref">System.Object</span></div>
+                  <div class="level1"><span class="xref">Statsd</span></div>
+              </div>
+              <div class="inheritedMembers">
+                <h5>Inherited Members</h5>
+                <div>
+                  <span class="xref">System.Object.ToString()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.Equals(System.Object)</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.GetHashCode()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.GetType()</span>
+                </div>
+                <div>
+                  <span class="xref">System.Object.MemberwiseClone()</span>
+                </div>
+              </div>
+              <h6><strong>Namespace</strong>:StatsN</h6>
+              <h6><strong>Assembly</strong>:cs.temp.dll.dll</h6>
+              <h5 id="StatsN_Statsd_syntax">Syntax</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public class Statsd : IStatsd, IDisposable</code></pre>
+              </div>
+              <h3 id="constructors">Constructors
+              </h3>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd__ctor_StatsN_StatsdOptions_StatsN_BaseCommunicationProvider_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.%23ctor(StatsN.StatsdOptions%2CStatsN.BaseCommunicationProvider)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd__ctor_" data-uid="StatsN.Statsd.#ctor*"></a>
+              <h4 id="StatsN_Statsd__ctor_StatsN_StatsdOptions_StatsN_BaseCommunicationProvider_" data-uid="StatsN.Statsd.#ctor(StatsN.StatsdOptions,StatsN.BaseCommunicationProvider)">Statsd(StatsdOptions, BaseCommunicationProvider)</h4>
+              <div class="markdown level1 summary"><p>Create a statsd client</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Statsd(StatsdOptions options, BaseCommunicationProvider provider = null)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="StatsN.StatsdOptions.html#StatsN_StatsdOptions">StatsdOptions</a></td>
+                    <td><em>options</em></td>
+                    <td><p>client options </p>
+</td>
+                  </tr>
+                  <tr>
+                    <td><a class="xref" href="StatsN.BaseCommunicationProvider.html#StatsN_BaseCommunicationProvider">BaseCommunicationProvider</a></td>
+                    <td><em>provider</em></td>
+                    <td><p>provider, defaults to udp if none is passed</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h3 id="methods">Methods
+              </h3>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_CountAsync_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.CountAsync(System.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_CountAsync_" data-uid="StatsN.Statsd.CountAsync*"></a>
+              <h4 id="StatsN_Statsd_CountAsync_System_String_System_Int64_" data-uid="StatsN.Statsd.CountAsync(System.String,System.Int64)">CountAsync(String, Int64)</h4>
+              <div class="markdown level1 summary"><p>Simple Counter</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Task CountAsync(string name, long count = 1L)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>name</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Int64</span></td>
+                    <td><em>count</em></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Threading.Tasks.Task</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="StatsN.IStatsd.html#StatsN_IStatsd_CountAsync_System_String_System_Int64_">IStatsd.CountAsync(String, Int64)</a></div>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_Dispose.md&amp;value=---%0Auid%3A%20StatsN.Statsd.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_Dispose_" data-uid="StatsN.Statsd.Dispose*"></a>
+              <h4 id="StatsN_Statsd_Dispose" data-uid="StatsN.Statsd.Dispose">Dispose()</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+              </div>
+              <h5 class="implements">Implements</h5>
+                  <div><span class="xref">System.IDisposable.Dispose()</span></div>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.Dispose(System.Boolean)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_Dispose_" data-uid="StatsN.Statsd.Dispose*"></a>
+              <h4 id="StatsN_Statsd_Dispose_System_Boolean_" data-uid="StatsN.Statsd.Dispose(System.Boolean)">Dispose(Boolean)</h4>
+              <div class="markdown level1 summary"></div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Boolean</span></td>
+                    <td><em>disposing</em></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_GaugeAsync_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.GaugeAsync(System.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_GaugeAsync_" data-uid="StatsN.Statsd.GaugeAsync*"></a>
+              <h4 id="StatsN_Statsd_GaugeAsync_System_String_System_Int64_" data-uid="StatsN.Statsd.GaugeAsync(System.String,System.Int64)">GaugeAsync(String, Int64)</h4>
+              <div class="markdown level1 summary"><p>arbitrary values, which can be recorded.  </p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Task GaugeAsync(string name, long value)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>name</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Int64</span></td>
+                    <td><em>value</em></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Threading.Tasks.Task</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="StatsN.IStatsd.html#StatsN_IStatsd_GaugeAsync_System_String_System_Int64_">IStatsd.GaugeAsync(String, Int64)</a></div>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_GaugeDeltaAsync_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.GaugeDeltaAsync(System.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_GaugeDeltaAsync_" data-uid="StatsN.Statsd.GaugeDeltaAsync*"></a>
+              <h4 id="StatsN_Statsd_GaugeDeltaAsync_System_String_System_Int64_" data-uid="StatsN.Statsd.GaugeDeltaAsync(System.String,System.Int64)">GaugeDeltaAsync(String, Int64)</h4>
+              <div class="markdown level1 summary"><p>Add or remove from gauge instead of setting</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Task GaugeDeltaAsync(string name, long value)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>name</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Int64</span></td>
+                    <td><em>value</em></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Threading.Tasks.Task</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="StatsN.IStatsd.html#StatsN_IStatsd_GaugeDeltaAsync_System_String_System_Int64_">IStatsd.GaugeDeltaAsync(String, Int64)</a></div>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_New_StatsN_StatsdOptions_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.New(StatsN.StatsdOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_New_" data-uid="StatsN.Statsd.New*"></a>
+              <h4 id="StatsN_Statsd_New_StatsN_StatsdOptions_" data-uid="StatsN.Statsd.New(StatsN.StatsdOptions)">New(StatsdOptions)</h4>
+              <div class="markdown level1 summary"><p>Create a new Statsd client. Defaults to Udp</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public static Statsd New(StatsdOptions options)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="StatsN.StatsdOptions.html#StatsN_StatsdOptions">StatsdOptions</a></td>
+                    <td><em>options</em></td>
+                    <td><p>client options</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="StatsN.Statsd.html#StatsN_Statsd">Statsd</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_New_System_Action_StatsN_StatsdOptions__.md&amp;value=---%0Auid%3A%20StatsN.Statsd.New(System.Action%7BStatsN.StatsdOptions%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_New_" data-uid="StatsN.Statsd.New*"></a>
+              <h4 id="StatsN_Statsd_New_System_Action_StatsN_StatsdOptions__" data-uid="StatsN.Statsd.New(System.Action{StatsN.StatsdOptions})">New(Action&lt;StatsdOptions&gt;)</h4>
+              <div class="markdown level1 summary"><p>Create a new Statsd client. Defaults to Udp</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public static Statsd New(Action&lt;StatsdOptions&gt; configure)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Action&lt;T&gt;</span>&lt;<a class="xref" href="StatsN.StatsdOptions.html#StatsN_StatsdOptions">StatsdOptions</a>&gt;</td>
+                    <td><em>configure</em></td>
+                    <td><p>configuration block</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="StatsN.Statsd.html#StatsN_Statsd">Statsd</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_New__1_StatsN_StatsdOptions_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.New%60%601(StatsN.StatsdOptions)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_New_" data-uid="StatsN.Statsd.New*"></a>
+              <h4 id="StatsN_Statsd_New__1_StatsN_StatsdOptions_" data-uid="StatsN.Statsd.New``1(StatsN.StatsdOptions)">New&lt;T&gt;(StatsdOptions)</h4>
+              <div class="markdown level1 summary"><p>Create a new Statsd client</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public static Statsd New&lt;T&gt;(StatsdOptions options)where T : BaseCommunicationProvider, new ()</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="StatsN.StatsdOptions.html#StatsN_StatsdOptions">StatsdOptions</a></td>
+                    <td><em>options</em></td>
+                    <td><p>client options</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="StatsN.Statsd.html#StatsN_Statsd">Statsd</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><em>T</em></td>
+                    <td>Statsd client to use</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_New__1_System_Action_StatsN_StatsdOptions__.md&amp;value=---%0Auid%3A%20StatsN.Statsd.New%60%601(System.Action%7BStatsN.StatsdOptions%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_New_" data-uid="StatsN.Statsd.New*"></a>
+              <h4 id="StatsN_Statsd_New__1_System_Action_StatsN_StatsdOptions__" data-uid="StatsN.Statsd.New``1(System.Action{StatsN.StatsdOptions})">New&lt;T&gt;(Action&lt;StatsdOptions&gt;)</h4>
+              <div class="markdown level1 summary"><p>Create a new Statsd client</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public static Statsd New&lt;T&gt;(Action&lt;StatsdOptions&gt; configure)where T : BaseCommunicationProvider, new ()</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Action&lt;T&gt;</span>&lt;<a class="xref" href="StatsN.StatsdOptions.html#StatsN_StatsdOptions">StatsdOptions</a>&gt;</td>
+                    <td><em>configure</em></td>
+                    <td><p>configuration block</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a class="xref" href="StatsN.Statsd.html#StatsN_Statsd">Statsd</a></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="typeParameters">Type Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><em>T</em></td>
+                    <td>Statsd client to use</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_SetAsync_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.SetAsync(System.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_SetAsync_" data-uid="StatsN.Statsd.SetAsync*"></a>
+              <h4 id="StatsN_Statsd_SetAsync_System_String_System_Int64_" data-uid="StatsN.Statsd.SetAsync(System.String,System.Int64)">SetAsync(String, Int64)</h4>
+              <div class="markdown level1 summary"><p>StatsD supports counting unique occurences of events between flushes, using a Set to store all occuring events</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Task SetAsync(string name, long value)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>name</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Int64</span></td>
+                    <td><em>value</em></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Threading.Tasks.Task</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="StatsN.IStatsd.html#StatsN_IStatsd_SetAsync_System_String_System_Int64_">IStatsd.SetAsync(String, Int64)</a></div>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_TimingAsync_System_String_System_Action_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.TimingAsync(System.String%2CSystem.Action)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_TimingAsync_" data-uid="StatsN.Statsd.TimingAsync*"></a>
+              <h4 id="StatsN_Statsd_TimingAsync_System_String_System_Action_" data-uid="StatsN.Statsd.TimingAsync(System.String,System.Action)">TimingAsync(String, Action)</h4>
+              <div class="markdown level1 summary"><p>How long something takes to complete. StatsD figures out percentiles, average (mean), standard deviation, sum, lower and upper bounds for the flush interval</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Task TimingAsync(string name, Action actionToTime)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>name</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Action</span></td>
+                    <td><em>actionToTime</em></td>
+                    <td><p>action to instrument</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Threading.Tasks.Task</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="StatsN.IStatsd.html#StatsN_IStatsd_TimingAsync_System_String_System_Action_">IStatsd.TimingAsync(String, Action)</a></div>
+              <span class="small pull-right mobile-hide">
+                <span class="divider">|</span>
+                <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd_TimingAsync_System_String_System_Int64_.md&amp;value=---%0Auid%3A%20StatsN.Statsd.TimingAsync(System.String%2CSystem.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+              </span>
+              
+              <a id="StatsN_Statsd_TimingAsync_" data-uid="StatsN.Statsd.TimingAsync*"></a>
+              <h4 id="StatsN_Statsd_TimingAsync_System_String_System_Int64_" data-uid="StatsN.Statsd.TimingAsync(System.String,System.Int64)">TimingAsync(String, Int64)</h4>
+              <div class="markdown level1 summary"><p>How long something takes to complete. StatsD figures out percentiles, average (mean), standard deviation, sum, lower and upper bounds for the flush interval</p>
+</div>
+              <div class="markdown level1 conceptual"></div>
+              <h5 class="decalaration">Declaration</h5>
+              <div class="codewrapper">
+                <pre><code class="lang-csharp hljs">public Task TimingAsync(string name, long milliseconds)</code></pre>
+              </div>
+              <h5 class="parameters">Parameters</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.String</span></td>
+                    <td><em>name</em></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span class="xref">System.Int64</span></td>
+                    <td><em>milliseconds</em></td>
+                    <td><p>time to log in ms</p>
+</td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="returns">Returns</h5>
+              <table class="table table-bordered table-striped table-condensed">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="xref">System.Threading.Tasks.Task</span></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <h5 class="implements">Implements</h5>
+                  <div><a class="xref" href="StatsN.IStatsd.html#StatsN_IStatsd_TimingAsync_System_String_System_Int64_">IStatsd.TimingAsync(String, Int64)</a></div>
+            </article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/TerribleDev/StatsN/new/master/docfx_project/apispec/new?filename=StatsN_Statsd.md&amp;value=---%0Auid%3A%20StatsN.Statsd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2016 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
