@@ -43,14 +43,14 @@ namespace StatsN.IntergrationTests
         [Fact]
         public void LogUdpStatsBuffered()
         {
-            var options = new StatsdOptions()
+            var options = new StatsdOptions
             {
                 BufferMetrics = true,
                 HostOrIp = "localhost",
                 Port = 8125,
+                OnExceptionGenerated = Options_OnExceptionGenerated,
+                OnLogEventGenerated = Options_OnLogEventGenerated
             };
-            options.OnExceptionGenerated += Options_OnExceptionGenerated;
-            options.OnLogEventGenerated += Options_OnLogEventGenerated;
             var statsd = Statsd.New<Udp>(options);
 
             var whenToStop = DateTime.Now.AddMinutes(20);
@@ -69,15 +69,14 @@ namespace StatsN.IntergrationTests
                 Thread.Sleep(75);
 
             }
-
         }
 
-        private void Options_OnLogEventGenerated(object sender, string e)
+        private void Options_OnLogEventGenerated(string e)
         {
             
         }
 
-        private void Options_OnExceptionGenerated(object sender, Exception e)
+        private void Options_OnExceptionGenerated(Exception e)
         {
             throw e;
         }

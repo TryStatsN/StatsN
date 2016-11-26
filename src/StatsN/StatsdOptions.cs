@@ -10,7 +10,7 @@ namespace StatsN
     public class StatsdOptions
     {
         public Action<System.Exception> OnExceptionGenerated;
-        public Action<string> OnLogEventGenerated;
+        public Action<StatsdLogMessage> OnLogEventGenerated;
 
         public bool BufferMetrics { get; set; } = false;
         public int BufferSize { get; set; } = 512;
@@ -34,19 +34,21 @@ namespace StatsN
         {
             if(OnExceptionGenerated == null)
             {
-                LogEvent(exception.Message, EventType.Error);
+                LogEvent(new StatsdLogMessage(exception.Message, EventType.Error));
                 return;
             }
             OnExceptionGenerated.Invoke(exception);
 
             
         }
-        internal void LogEvent(string message, EventType evntType)
+        internal void LogEvent(string message, EventType weight) => this.LogEvent(new StatsdLogMessage(message, weight));
+        
+        internal void LogEvent(StatsdLogMessage logMessage)
         {
             if(OnLogEventGenerated == null)
             {
-                var traceMessage = $"{Constants.Statsd}: {message}";
-                switch (evntType)
+                var traceMessage = $"{Constants.Statsd}: {logMessage.Message}";
+                switch (logMessage.Weight)
                 {
                     case EventType.Info:
                         Trace.TraceInformation(traceMessage);
@@ -61,7 +63,7 @@ namespace StatsN
             }
             else
             {
-                OnLogEventGenerated?.Invoke(message);
+                OnLogEventGenerated?.Invoke(logMessage);
             }
         }
     }

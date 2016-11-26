@@ -13,8 +13,10 @@ namespace StatsN.UnitTests
         public StatsdOptions options;
         public StastdTests()
         {
-            var opt = new StatsdOptions();
-            opt.OnExceptionGenerated = (exception) => { throw exception; };
+            var opt = new StatsdOptions
+            {
+                OnExceptionGenerated = (exception) => { throw exception; }
+            };
             options = opt;
         }
         [Fact]
@@ -27,8 +29,11 @@ namespace StatsN.UnitTests
         [Fact]
         public void ExceptionsShouldBePassed()
         {
-            var opt = new StatsdOptions() { HostOrIp = null };
-            opt.OnExceptionGenerated = (exception) => { throw exception; };
+            var opt = new StatsdOptions
+            {
+                HostOrIp = null,
+                OnExceptionGenerated = (exception) => { throw exception; }
+            };
             Assert.Throws<ArgumentNullException>(() => Statsd.New<NullChannel>(opt));
         }
         [Fact]
@@ -78,7 +83,7 @@ namespace StatsN.UnitTests
             }
             stopwatch.Stop();
             //we should be able to compile metrics FAST
-            Assert.True(stopwatch.ElapsedMilliseconds < 20);
+            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 300);
         }
         [Fact]
         public void ConfirmMetricsBuffered()
