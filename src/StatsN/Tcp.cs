@@ -10,10 +10,16 @@ namespace StatsN
 {
     public class Tcp : BaseCommunicationProvider
     {
+#pragma warning disable CC0052 // Make field readonly
+#pragma warning disable CC0033 // Dispose Fields Properly
         private TcpClient Client = new TcpClient();
+#pragma warning restore CC0033 // Dispose Fields Properly
+#pragma warning restore CC0052 // Make field readonly
         private NetworkStream Stream;
         private IPEndPoint ipEndpoint;
+#pragma warning disable CC0052 // Make field readonly
         private object padLock = new object();
+#pragma warning restore CC0052 // Make field readonly
         public override bool IsConnected
         {
             get

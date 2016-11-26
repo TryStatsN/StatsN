@@ -11,7 +11,11 @@ namespace StatsN
 {
     public class Udp : BaseCommunicationProvider
     {
+#pragma warning disable CC0052 // Make field readonly
+#pragma warning disable CC0033 // Dispose Fields Properly
         private UdpClient _udpClient = new UdpClient();
+#pragma warning restore CC0033 // Dispose Fields Properly
+#pragma warning restore CC0052 // Make field readonly
         private IPEndPoint _ipEndpoint;
 
         public override async Task SendAsync(byte[] payload)

@@ -15,10 +15,16 @@ namespace StatsN
             }
         }
 
-        public async override Task<bool> Connect() => true;
+        public override Task<bool> Connect()
+        {
+            return Task.FromResult(true);
+        }
 
         public override void OnDispose(){}
 
-        public async override Task SendAsync(byte[] payload){}
+        public override Task SendAsync(byte[] payload)
+        {
+            return Task.FromResult(0);
+        }
     }
 }
