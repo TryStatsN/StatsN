@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StatsN.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -14,8 +15,8 @@ namespace StatsN.IntergrationTests
         {
             var options = new StatsdOptions()
             {
-                BufferMetrics = false,
-                HostOrIp = "localhost",
+                BufferMetrics = true,
+                HostOrIp = "127.0.0.1",
                 Port = 8125,
             };
             options.OnExceptionGenerated += Options_OnExceptionGenerated;
@@ -51,7 +52,7 @@ namespace StatsN.IntergrationTests
                 OnExceptionGenerated = Options_OnExceptionGenerated,
                 OnLogEventGenerated = Options_OnLogEventGenerated
             };
-            var statsd = Statsd.New<Udp>(options);
+            var statsd = Statsd.New<Tcp>(options);
 
             var whenToStop = DateTime.Now.AddMinutes(20);
             var random = new Random();
@@ -71,14 +72,14 @@ namespace StatsN.IntergrationTests
             }
         }
 
-        private void Options_OnLogEventGenerated(string e)
+        private void Options_OnLogEventGenerated(StatsdLogMessage msg)
         {
             
         }
 
         private void Options_OnExceptionGenerated(Exception e)
         {
-            throw e;
+            //throw e;
         }
     }
 }

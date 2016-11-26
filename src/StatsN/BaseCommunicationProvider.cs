@@ -29,17 +29,12 @@ namespace StatsN
                     while (Queue.Count > 0)
                     {
                         if (!Queue.TryDequeue(out bufferOut)) continue;
-                        if ((buffer.Count + Constants.newLine.Length + bufferOut.Length) < Options.BufferSize)
+                        if ((buffer.Count + bufferOut.Length) < Options.BufferSize)
                         {
-                            if(buffer.Count > 0)
-                            {
-                                buffer.AddRange(Constants.newLine);
-                            }
                             buffer.AddRange(bufferOut);
                         }
                         else
                         {
-                            var stringData = Encoding.UTF8.GetString(buffer.ToArray());
                             SendAsync(buffer.ToArray());
                             buffer.Clear();
                             buffer.AddRange(bufferOut);
@@ -68,7 +63,7 @@ namespace StatsN
 
         internal Task SendMetric(string metric)
         {
-            var payload = Encoding.UTF8.GetBytes(metric);
+            var payload = Encoding.ASCII.GetBytes(metric + Environment.NewLine);
             if (Options.BufferMetrics)
             {
                 Queue.Enqueue(payload);

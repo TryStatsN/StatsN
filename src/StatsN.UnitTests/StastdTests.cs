@@ -26,15 +26,14 @@ namespace StatsN.UnitTests
             var output = statsd.BuildMetric("awesomeMetric.yo", "1", "c");
             Assert.Equal("awesomeMetric.yo:1|c", output);
         }
-        [Fact]
-        public void ExceptionsShouldBePassed()
+        [Theory]
+        [InlineData("awesome.yo", "1", "c", "awesome.yo:1|c", "")]
+        [InlineData("awesome.yo", "4", "s", "appname.awesome.yo:4|s", "appname")]
+        public void TestManyMetrics(string metric, string value, string type, string assertionValue, string prefix = "")
         {
-            var opt = new StatsdOptions
-            {
-                HostOrIp = null,
-                OnExceptionGenerated = (exception) => { throw exception; }
-            };
-            Assert.Throws<ArgumentNullException>(() => Statsd.New<NullChannel>(opt));
+            var statsd = Statsd.New<NullChannel>(options);
+            var output = statsd.BuildMetric(metric, value, type, prefix);
+            Assert.Equal(assertionValue, output);
         }
         [Fact]
         public void BuildMetricPrefixTest()
@@ -42,6 +41,12 @@ namespace StatsN.UnitTests
             var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated = (b) => { throw b; }; });
             var output = statsd.BuildMetric("awesomeMetric.yo", "1", "c", "myPrefix");
             Assert.Equal("myPrefix.awesomeMetric.yo:1|c", output);
+        }
+        [Fact]
+        public void EscapeDots()
+        {
+            var options = new StatsdOptions() { Prefix = "awesome." };
+            Assert.Equal("awesome", options.Prefix);
         }
         [Fact]
         public void CorrectMetricTypesPassed()

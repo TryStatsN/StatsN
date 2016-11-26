@@ -14,16 +14,43 @@ namespace StatsN
 
         readonly BaseCommunicationProvider _provider;
 
+        /// <summary>
+        /// Create a new Statsd client
+        /// </summary>
+        /// <typeparam name="T">Statsd client to use</typeparam>
+        /// <param name="configure">configuration block</param>
+        /// <returns></returns>
         public static Statsd New<T>(Action<StatsdOptions> configure) where T: BaseCommunicationProvider, new()
         {
             var options = new StatsdOptions();
             configure?.Invoke(options);
             return new Statsd(options, new T());
         }
+        /// <summary>
+        /// Create a new Statsd client
+        /// </summary>
+        /// <typeparam name="T">Statsd client to use</typeparam>
+        /// <param name="options">client options</param>
+        /// <returns></returns>
         public static Statsd New<T>(StatsdOptions options) where T: BaseCommunicationProvider, new() => new Statsd(options, new T());
+        /// <summary>
+        /// Create a new Statsd client. Defaults to Udp
+        /// </summary>
+        /// <param name="options">client options</param>
+        /// <returns></returns>
         public static Statsd New(StatsdOptions options) => Statsd.New<Udp>(options);
-        public static Statsd New(Action<StatsdOptions> options) => Statsd.New<Udp>(options);
-        public Statsd(StatsdOptions options, BaseCommunicationProvider provider)
+        /// <summary>
+        /// Create a new Statsd client. Defaults to Udp
+        /// </summary>
+        /// <param name="configure">configuration block</param>
+        /// <returns></returns>
+        public static Statsd New(Action<StatsdOptions> configure) => Statsd.New<Udp>(configure);
+        /// <summary>
+        /// Create a statsd client
+        /// </summary>
+        /// <param name="options">client options </param>
+        /// <param name="provider">provider, defaults to udp if none is passed</param>
+        public Statsd(StatsdOptions options, BaseCommunicationProvider provider = null)
         {
             if(options == null)
             {
@@ -35,19 +62,21 @@ namespace StatsN
             }
             if (string.IsNullOrEmpty(options.HostOrIp))
             {
-                throw new ArgumentNullException(nameof(options.HostOrIp));
+                options.LogEvent("No host or ip provided, failing back to null output", EventType.Error);
+                _provider = new NullChannel();
             }
             if(options.Port < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(options.Port));
+                options.LogEvent("port provided, failing back to null output", EventType.Error);
+                _provider = new NullChannel();
             }
             this.options = options;
             _provider = provider.Construct(options);
 
         }
-        public Task LogMetric(string metricName, long value, string metricType, string postfix = "") => LogMetric(metricName, value.ToString(), metricType, postfix);
+        internal Task LogMetric(string metricName, long value, string metricType, string postfix = "") => LogMetric(metricName, value.ToString(), metricType, postfix);
         
-        public async Task LogMetric(string metricName, string value, string metricType, string postfix = "")
+        internal async Task LogMetric(string metricName, string value, string metricType, string postfix = "")
         {
             if (!_provider.IsConnected && !await _provider.Connect().ConfigureAwait(false))
             {

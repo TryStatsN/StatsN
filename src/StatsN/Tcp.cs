@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace StatsN
@@ -33,7 +34,7 @@ namespace StatsN
                 if (Client.Connected) return true; //this could change since things could q up
                 try
                 {
-                    Client.ConnectAsync(ipEndpoint.Address, Options.Port).GetAwaiter().GetResult();
+                    Client.ConnectAsync(this.ipEndpoint.Address, Options.Port).GetAwaiter().GetResult();
                     if (Client.Connected) Stream = Client.GetStream();
                     return Client.Connected && Stream != null && Stream.CanWrite;
                 }
@@ -52,14 +53,22 @@ namespace StatsN
             Client = null;
         }
 
-        public override Task SendAsync(byte[] payload)
+        public override async Task SendAsync(byte[] payload)
         {
             if(!Client.Connected || !Stream.CanWrite)
             {
                 Options.LogEvent("Tcp Stream not ready to write bytes dropping payload on the floor", Exceptions.EventType.Warning);
-                return Task.FromResult(0);
+                return;
             }
-            return Stream.WriteAsync(payload, 0, payload.Length);
+            try
+            {
+                await Stream.WriteAsync(payload, 0, payload.Length);
+            }
+            catch(Exception e)
+            {
+                this.Options.LogException(e);
+            }
+            
         }
     }
 }

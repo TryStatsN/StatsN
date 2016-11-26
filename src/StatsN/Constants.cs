@@ -13,7 +13,7 @@ namespace StatsN
         internal const char dot = '.';
         internal const string Localhost = "127.0.0.1";
         internal const string Statsd = "Statsd";
-        internal static byte[] newLine = Encoding.UTF8.GetBytes(@"\n");
+        
         internal static class Metrics
         {
             /// <summary>
