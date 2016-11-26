@@ -49,8 +49,13 @@ namespace StatsN
 
         public override void OnDispose()
         {
+#if net45
+            Client.Close();
+#else
             Client.Dispose();
             Client = null;
+#endif
+
         }
 
         public override async Task SendAsync(byte[] payload)

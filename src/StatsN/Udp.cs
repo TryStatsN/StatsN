@@ -50,8 +50,12 @@ namespace StatsN
         }
         public override void OnDispose()
         {
+#if net45
+            _udpClient.Close();
+#else
             _udpClient.Dispose();
             _udpClient = null;
+#endif
         }
     }
 }
