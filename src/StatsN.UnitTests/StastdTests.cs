@@ -121,7 +121,7 @@ namespace StatsN.UnitTests
             }
             while (client.worker.IsBusy) { }
             stopwatch.Stop();
-            Assert.True(stopwatch.ElapsedMilliseconds < 300);
+            Assert.InRange(stopwatch.ElapsedMilliseconds, 200, 800);
         }
         [Fact]
         public void ConfirmUdpSendNoBufferedTime()
@@ -136,6 +136,7 @@ namespace StatsN.UnitTests
             }
             while (client.worker.IsBusy) { }
             stopwatch.Stop();
+            Assert.InRange(stopwatch.ElapsedMilliseconds, 200, 800);
         }
     }
 }
