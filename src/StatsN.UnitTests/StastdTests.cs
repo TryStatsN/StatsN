@@ -127,7 +127,7 @@ namespace StatsN.UnitTests
         public void ConfirmUdpSendNoBufferedTime()
         {
             var client = new Udp();
-            var statsd = new Statsd(new StatsdOptions() { BufferMetrics = true }, client);
+            var statsd = new Statsd(new StatsdOptions() { BufferMetrics = false }, client);
             var stopwatch = new Stopwatch();
             stopwatch.Start();
             for (int i = 0; i < 100000; i++)
