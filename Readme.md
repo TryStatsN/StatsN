@@ -14,12 +14,12 @@ In short the api is easy. You can get a new IStatsd with a few different ways, a
 
 
 ```csharp
-IStatsd statsd = Statsd.New<Udp>(a=>a.hostOrIp = "10.22.2.1", Port = 8125);
-IStatsd statsd = Statsd.New<Tcp>(a=>a.hostOrIp = "10.22.2.1"); //use tcp
-IStatsd statsd = Statsd.New(a=>a.hostOrIp = "10.22.2.1"); //defaults to udp
-IStatsd statsd = Statsd.New(new StatsdOptions(){ hostOrIp = "127.0.0.1"}); //defaults to udp
-IStatsd statsd = new Stastd(new StatsdOptions(){ hostOrIp = "127.0.0.1"});  //defaults to udp
-IStatsd statsd = new Stastd(new StatsdOptions(){ hostOrIp = "127.0.0.1"}, new Tcp()); //pass a new udp client. You could in theory make your own transport if you inherit from BaseCommunicationProvider
+IStatsd statsd = Statsd.New<Udp>(a=>a.HostOrIp = "10.22.2.1", Port = 8125);
+IStatsd statsd = Statsd.New<Tcp>(a=>a.HostOrIp = "10.22.2.1"); //use tcp
+IStatsd statsd = Statsd.New(a=>a.HostOrIp = "10.22.2.1"); //defaults to udp
+IStatsd statsd = Statsd.New(new StatsdOptions(){ HostOrIp = "127.0.0.1"}); //defaults to udp
+IStatsd statsd = new Stastd(new StatsdOptions(){ HostOrIp = "127.0.0.1"});  //defaults to udp
+IStatsd statsd = new Stastd(new StatsdOptions(){ HostOrIp = "127.0.0.1"}, new Tcp()); //pass a new udp client. You could in theory make your own transport if you inherit from BaseCommunicationProvider
 
 
 statsd.CountAsync("myapp.counterstat"); //default to 1 aka increment
