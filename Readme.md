@@ -1,24 +1,30 @@
 ## StastN
 
+[![Build status](https://ci.appveyor.com/api/projects/status/breathpwtv4pjlg9/branch/master?svg=true)](https://ci.appveyor.com/project/tparnell8/statsn/branch/master) [![Coverage Status](https://coveralls.io/repos/github/TerribleDev/StatsN/badge.svg?branch=master)](https://coveralls.io/github/TerribleDev/StatsN?branch=master)
 
-StastN is a modern high performance Stastd client for dotnet core. StatsN supports both TCP and UDP, although UDP is recommended.
+StastN is a modern high performance Stastd client for dotnet core. StatsN supports both TCP and UDP, although UDP is recommended. Largely inspired by the [statsd-csharp-client](https://github.com/Pereingo/statsd-csharp-client) and the [statsd.net client](https://github.com/lukevenediger/statsd-csharp-client). Both projects In my mind are awesome, just not exactly what I was looking for.
 
+I wrote this client, because I found unit testing [statics](https://github.com/Pereingo/statsd-csharp-client) statics less than fun, and tired of waiting for [features to be published](https://github.com/lukevenediger/statsd-csharp-client/issues/17). Also I noticed some statsd clients had features implemented that were unsuported by statsd itself.
+
+This client attempts to help testability by using interfaces, observability by allowing you to register functions to listen for exceptions and logging that occurs inside the client, and scalability by really making the code perform well.
 
 ## Getting started
 
-You can get a new IStatsd with a few different ways, and then you can log metrics. Here are some examples.
+In short the api is easy. You can get a new IStatsd with a few different ways, and then you can log metrics with an IStatsd implementation. Here are some examples.
 
 
 ```csharp
 IStatsd statsd = Statsd.New<Udp>(a=>a.hostOrIp = "10.22.2.1", Port = 8125);
-IStatsd statsd = Statsd.New<Tcp>(a=>a.hostOrIp = "10.22.2.1");
+IStatsd statsd = Statsd.New<Tcp>(a=>a.hostOrIp = "10.22.2.1"); //use tcp
 IStatsd statsd = Statsd.New(a=>a.hostOrIp = "10.22.2.1"); //defaults to udp
 IStatsd statsd = Statsd.New(new StatsdOptions(){ hostOrIp = "127.0.0.1"}); //defaults to udp
 IStatsd statsd = new Stastd(new StatsdOptions(){ hostOrIp = "127.0.0.1"});  //defaults to udp
-IStatsd statsd = new Stastd(new StatsdOptions(){ hostOrIp = "127.0.0.1"}, new Udp());
+IStatsd statsd = new Stastd(new StatsdOptions(){ hostOrIp = "127.0.0.1"}, new Tcp()); //pass a new udp client. You could in theory make your own transport if you inherit from BaseCommunicationProvider
 
 
-statsd.CountAsync("myapp.counterstat");
+statsd.CountAsync("myapp.counterstat"); //default to 1 aka increment
+statsd.CountAsync("myapp.counterstat", 6);
+statsd.CountAsync("myapp.counterstat", -6);
 statsd.TimerAsync("myapp.timeMyFunction", ()=>{
  //code to instrument
 });
@@ -31,9 +37,9 @@ statsd.SetAsync("autotest.setyo", 888);
 
 ## Logging
 
-Like most statsd clients, this client tries to avoid throwing exceptions at all costs. Any errors/exceptions created will be logged ass a Systems.Diagnostics.Trace message.
+Like most statsd clients, this client **avoids throwing exceptions at all costs**. Any errors/exceptions created will be logged as a Systems.Diagnostics.Trace messages.
 
-You can pass lambda into the StatsdOptions class to be passed exceptions and log messages.
+You can pass lambda into the `StatsdOptions` class to be passed exceptions and log messages, instead of getting them through the Trace system.
 
 
 ```csharp
@@ -51,14 +57,22 @@ or
 
 ```csharp
 
-var stats = Statsd.New(a=>a.OnExceptionGenerated = (exception) => { 
-		/* handle exception */ });
+var stats = Statsd.New(a=>a.OnExceptionGenerated = (exception) => { /* handle exception */ });
 ```
 
 ## Buffering metrics
 
-By setting the `BufferMetrics` property in the options object to true, the metrics will be buffered thus sending packets. This uses a Concurrent Queue to Queue up the metrics and a BackgroundWorker to peal metrics off the Queue and send them along aggregated.
+By setting the `BufferMetrics` property in the options object to true, the metrics will be buffered thus sending less packets. The Buffer size defaults to 512, which is [documented by statsd](https://github.com/etsy/statsd/blob/master/docs/metric_types.md#multi-metric-packets). You may change its size using the BufferSize property of `StastdOptions`. This uses a Concurrent Queue to Queue up the metrics and a `BackgroundWorker` to peal metrics off the Queue and send them along aggregated.
 
+```csharp
+
+var opt = new StatsdOptions(){
+
+    BufferMetrics = true,
+    BufferSize = 512
+};
+
+```
 
 ## Awaiting metrics
 
