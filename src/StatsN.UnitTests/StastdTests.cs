@@ -88,7 +88,7 @@ namespace StatsN.UnitTests
             }
             stopwatch.Stop();
             //we should be able to compile metrics FAST
-            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 300);
+            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 3000);
         }
         [Fact]
         public void ConfirmMetricsBuffered()
