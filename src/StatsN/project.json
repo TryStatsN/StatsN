@@ -9,7 +9,7 @@
       ],
     "projectUrl": "https://github.com/TerribleDev/StatsN",
     "summary": "A modern statsd client for dotnet core and dotnet 4.5",
-    "licenseUrl": "https://github.com/TerribleDev/StatsN/blob/master/LICENSE",
+    "licenseUrl": "https://raw.githubusercontent.com/TerribleDev/StatsN/master/LICENSE",
     "tags": [
       "stastd",
       "stats",
