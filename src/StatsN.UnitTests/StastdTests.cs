@@ -99,7 +99,7 @@ namespace StatsN.UnitTests
             var statsd = new Statsd(new StatsdOptions() { BufferMetrics = true }, mockedMetric.Object);
             for (int i = 0; i < 100000; i++)
             {
-                statsd.Count("fun");
+                statsd.CountAsync("fun");
             }
             while (mockedMetric.Object.worker.IsBusy) { }
             mockedMetric.Verify();
@@ -113,7 +113,7 @@ namespace StatsN.UnitTests
             var statsd = new Statsd(new StatsdOptions() {}, mockedMetric.Object);
             for (int i = 0; i < 100000; i++)
             {
-                statsd.Count("fun");
+                statsd.CountAsync("fun");
             }
             while (mockedMetric.Object.worker.IsBusy) { }
             mockedMetric.Verify();
@@ -128,7 +128,7 @@ namespace StatsN.UnitTests
             stopwatch.Start();
             for (int i = 0; i < 100000; i++)
             {
-                statsd.Count("fun");
+                statsd.CountAsync("fun");
             }
             while (client.worker.IsBusy) { }
             stopwatch.Stop();
@@ -144,7 +144,7 @@ namespace StatsN.UnitTests
             stopwatch.Start();
             for (int i = 0; i < 100000; i++)
             {
-                statsd.Count("fun");
+                statsd.CountAsync("fun");
             }
             while (client.worker.IsBusy) { }
             stopwatch.Stop();

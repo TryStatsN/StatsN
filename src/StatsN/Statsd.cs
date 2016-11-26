@@ -74,9 +74,9 @@ namespace StatsN
             _provider = provider.Construct(options);
 
         }
-        internal Task LogMetric(string metricName, long value, string metricType, string postfix = "") => LogMetric(metricName, value.ToString(), metricType, postfix);
+        internal Task LogMetricAsync(string metricName, long value, string metricType, string postfix = "") => LogMetricAsync(metricName, value.ToString(), metricType, postfix);
         
-        internal async Task LogMetric(string metricName, string value, string metricType, string postfix = "")
+        internal async Task LogMetricAsync(string metricName, string value, string metricType, string postfix = "")
         {
             if (!_provider.IsConnected && !await _provider.Connect().ConfigureAwait(false))
             {

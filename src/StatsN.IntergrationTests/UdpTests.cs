@@ -30,10 +30,10 @@ namespace StatsN.IntergrationTests
                 var amount = random.Next(1, 6);
                 for (int i = 0; i < amount; i++)
                 {
-                    statsd.Count("autotest.counteryo").Wait();
-                    statsd.Gauge("autotest.gaugeyo", random.Next(50, 400)).Wait();
-                    statsd.Set("autotest.setyo", random.Next(100, 1000)).Wait();
-                    statsd.Timing("autotest.timeryo", random.Next(100, 1000)).Wait();
+                    statsd.CountAsync("autotest.counteryo").Wait();
+                    statsd.GaugeAsync("autotest.gaugeyo", random.Next(50, 400)).Wait();
+                    statsd.SetAsync("autotest.setyo", random.Next(100, 1000)).Wait();
+                    statsd.TimingAsync("autotest.timeryo", random.Next(100, 1000)).Wait();
 
                 }
                 Thread.Sleep(300);
@@ -61,10 +61,10 @@ namespace StatsN.IntergrationTests
                 var amount = random.Next(1, 6);
                 for (int i = 0; i < amount; i++)
                 {
-                    statsd.Count("autotest.counteryo").Wait();
-                    statsd.Gauge("autotest.gaugeyo", random.Next(50, 400)).Wait();
-                    statsd.Set("autotest.setyo", random.Next(100, 1000)).Wait();
-                    statsd.Timing("autotest.timeryo", random.Next(100, 1000)).Wait();
+                    statsd.CountAsync("autotest.counteryo").Wait();
+                    statsd.GaugeAsync("autotest.gaugeyo", random.Next(50, 400)).Wait();
+                    statsd.SetAsync("autotest.setyo", random.Next(100, 1000)).Wait();
+                    statsd.TimingAsync("autotest.timeryo", random.Next(100, 1000)).Wait();
 
                 }
                 Thread.Sleep(75);

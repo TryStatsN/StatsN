@@ -15,10 +15,10 @@ namespace StatsN.UnitTests
                 HostOrIp = "127.0.0.1",
                 Port = 8888
             });
-            statsd.Count("awesomemetric.yo");
-            statsd.Count("awesomemetric.yo");
-            statsd.Count("awesomemetric.yo");
-            statsd.Count("awesomemetric.yo");
+            statsd.CountAsync("awesomemetric.yo");
+            statsd.CountAsync("awesomemetric.yo");
+            statsd.CountAsync("awesomemetric.yo");
+            statsd.CountAsync("awesomemetric.yo");
         }
     }
 }
