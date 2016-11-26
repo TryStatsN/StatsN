@@ -3,7 +3,25 @@
 
   "dependencies": {
   },
-
+   "packOptions": {
+      "owners": [
+          "Tommy Parnell"
+      ],
+    "projectUrl": "https://github.com/TerribleDev/StatsN",
+    "summary": "A modern statsd client for dotnet core and dotnet 4.5",
+    "licenseUrl": "https://github.com/TerribleDev/StatsN/blob/master/LICENSE",
+    "tags": [
+      "stastd",
+      "stats",
+      "instrumentation",
+      "dotnet core",
+      ".net core",
+      "core",
+      "statistics",
+      "dotnet 4.5",
+      ".net 4.5"
+    ]
+   },
   "frameworks": {
     "net45": {
       "frameworkAssemblies": {
