@@ -4,7 +4,7 @@
 
 StastN is a modern high performance Stastd client for dotnet core. StatsN supports both TCP and UDP, although UDP is recommended. Largely inspired by the [statsd-csharp-client](https://github.com/Pereingo/statsd-csharp-client) and the [statsd.net client](https://github.com/lukevenediger/statsd-csharp-client). Both projects In my mind are awesome :facepunch:, just not exactly what I was looking for.
 
-I wrote this client, because I found unit testing [statics](https://github.com/Pereingo/statsd-csharp-client) statics less than fun, and tired of waiting for [features to be published](https://github.com/lukevenediger/statsd-csharp-client/issues/17). Or support for [features](https://github.com/lukevenediger/statsd-csharp-client/blob/250f02caaf5fdbf3e112ac57c86d5a8bdb9618c5/StatsdClient/IStatsd.cs#L54) that statsd [does not actually supprt](https://github.com/etsy/statsd/issues/467).
+I wrote this client, because I found unit testing [statics](https://github.com/Pereingo/statsd-csharp-client) less than fun, and tired of waiting for [features to be published](https://github.com/lukevenediger/statsd-csharp-client/issues/17). Or support for [features](https://github.com/lukevenediger/statsd-csharp-client/blob/250f02caaf5fdbf3e112ac57c86d5a8bdb9618c5/StatsdClient/IStatsd.cs#L54) that statsd [does not actually supprt](https://github.com/etsy/statsd/issues/467).
 
 This client attempts to help testability by using interfaces, observability by allowing you to register functions to listen for exceptions and logging that occurs inside the client, and scalability by really making the code perform well.
 
