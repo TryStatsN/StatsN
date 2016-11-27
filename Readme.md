@@ -11,6 +11,10 @@ This client attempts to help testability by using interfaces, observability by a
 
 ## Getting started
 
+```
+Install-Package StatsN
+```
+
 In short the api is easy. You can get a new IStatsd with a few different ways, and then you can log metrics with an IStatsd implementation. Here are some examples.
 
 
