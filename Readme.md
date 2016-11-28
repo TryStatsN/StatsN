@@ -19,7 +19,7 @@ In short the api is easy. You can get a new IStatsd with a few different ways, a
 
 Note, You will want to store your IStatsd as a singleton (most likely inside a DI container). This type persists a tcp or udp connection. The client's functions are thread safe.
 ```csharp
-IStatsd statsd = Statsd.New<Udp>(a=>a.HostOrIp = "10.22.2.1", Port = 8125);
+IStatsd statsd = Statsd.New<Udp>(a=>a.HostOrIp = "10.22.2.1", Port = 8125, Prefix = "MyMicroserviceName");
 IStatsd statsd = Statsd.New<Tcp>(a=>a.HostOrIp = "10.22.2.1"); //use tcp
 IStatsd statsd = Statsd.New(a=>a.HostOrIp = "10.22.2.1"); //defaults to udp
 IStatsd statsd = Statsd.New(new StatsdOptions(){ HostOrIp = "127.0.0.1"}); //defaults to udp
