@@ -21,7 +21,7 @@ Note, You will want to store your IStatsd as a singleton (most likely inside a D
 ```csharp
 IStatsd statsd = Statsd.New<Udp>(a=>a.HostOrIp = "10.22.2.1", Port = 8125, Prefix = "MyMicroserviceName");
 IStatsd statsd = Statsd.New<Tcp>(a=>a.HostOrIp = "10.22.2.1"); //use tcp
-IStatsd statsd = StatsN.Statsd.New<NullChannel>(a=>a.HostOrIp = "10.22.2.1", Port = 8125); //pipes your metrics to nowhere...which can scale infinately btw
+IStatsd statsd = Statsd.New<NullChannel>(a=>a.HostOrIp = "10.22.2.1", Port = 8125); //pipes your metrics to nowhere...which can scale infinately btw
 IStatsd statsd = Statsd.New(a=>a.HostOrIp = "10.22.2.1"); //defaults to udp
 IStatsd statsd = Statsd.New(new StatsdOptions(){ HostOrIp = "127.0.0.1"}); //defaults to udp
 IStatsd statsd = new Stastd(new StatsdOptions(){ HostOrIp = "127.0.0.1"});  //defaults to udp
