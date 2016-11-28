@@ -41,6 +41,8 @@ statsd.SetAsync("autotest.setyo", 888);
 
 ```
 
+If you plan on playing around with the code, be sure to download and install [.NET core tools](https://www.microsoft.com/net/core).
+
 ## Logging
 
 Like most statsd clients, this client **avoids throwing exceptions at all costs**. Any errors/exceptions created will be logged as a Systems.Diagnostics.Trace messages.
