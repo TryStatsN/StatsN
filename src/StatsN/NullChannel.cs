@@ -17,14 +17,14 @@ namespace StatsN
 
         public override Task<bool> Connect()
         {
-            return Task.FromResult(true);
+            return TplFactory.FromResult(true);
         }
 
         public override void OnDispose(){}
 
         public override Task SendAsync(byte[] payload)
         {
-            return Task.FromResult(0);
+            return TplFactory.FromResult(0);
         }
     }
 }

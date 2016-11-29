@@ -24,13 +24,18 @@ namespace StatsN
             if(_ipEndpoint == null)
             {
                 endpoint = await GetIpAddressAsync().ConfigureAwait(false);
+
                 if (endpoint == null) return;
             }
             else
             {
                 endpoint = _ipEndpoint;
             }
+#if net40
+            _udpClient.Send(payload, payload.Length, endpoint);
+#else
             await _udpClient.SendAsync(payload, payload.Length, endpoint).ConfigureAwait(false);
+#endif
         }
         public override bool IsConnected
         {
@@ -54,7 +59,7 @@ namespace StatsN
         }
         public override void OnDispose()
         {
-#if net45
+#if NETFULL
             _udpClient.Close();
 #else
             _udpClient.Dispose();

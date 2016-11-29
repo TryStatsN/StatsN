@@ -68,15 +68,20 @@ namespace StatsN
             {
                 Queue.Enqueue(payload);
                 if (!worker.IsBusy) worker.RunWorkerAsync();
+#if net40
+                return TplFactory.FromResult();
+#else
                 return Task.FromResult(0);
+#endif
             }
             return SendAsync(payload);
         }
         public abstract Task SendAsync(byte[] payload);
 
-        protected Task<IPEndPoint> GetIpAddressAsync() => GetIpAddressAsync(this.Options.HostOrIp, this.Options.Port); 
-        
+        protected Task<IPEndPoint> GetIpAddressAsync() => GetIpAddressAsync(this.Options.HostOrIp, this.Options.Port);
+#pragma warning disable CS1998 // Remove trailing whitespace
         protected async Task<IPEndPoint> GetIpAddressAsync(string hostOrIPAddress, int port)
+#pragma warning restore CS1998 // Remove trailing whitespace
         {
             IPAddress ipAddress;
             // Is this an IP address already?
@@ -84,7 +89,12 @@ namespace StatsN
             {
                 try
                 {
+#if net40
+                    ipAddress = Dns.GetHostAddresses(hostOrIPAddress).First(p => p.AddressFamily == AddressFamily.InterNetwork);
+#else
                     ipAddress = (await Dns.GetHostAddressesAsync(hostOrIPAddress).ConfigureAwait(false)).First(p => p.AddressFamily == AddressFamily.InterNetwork);
+#endif
+
                 }
                 catch (Exception)
                 {
