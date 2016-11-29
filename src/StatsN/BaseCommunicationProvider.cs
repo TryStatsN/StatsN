@@ -75,9 +75,9 @@ namespace StatsN
         public abstract Task SendAsync(byte[] payload);
 
         protected Task<IPEndPoint> GetIpAddressAsync() => GetIpAddressAsync(this.Options.HostOrIp, this.Options.Port);
-#pragma warning disable CS1998 // Remove trailing whitespace
+#pragma warning disable CS1998 // Async runs sync (in net40)
         protected async Task<IPEndPoint> GetIpAddressAsync(string hostOrIPAddress, int port)
-#pragma warning restore CS1998 // Remove trailing whitespace
+#pragma warning restore CS1998  // Async runs sync (in net40)
         {
             IPAddress ipAddress;
             // Is this an IP address already?
