@@ -5,7 +5,9 @@ using System.Threading.Tasks;
 
 namespace StatsN
 {
-
+    /// <summary>
+    /// Class that provides Task.FromResult functions for dotnet 4+
+    /// </summary>
     public static class TplFactory
     {
         public static Task<Result> FromResult<Result>(Result result)
