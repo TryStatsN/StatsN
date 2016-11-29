@@ -68,11 +68,7 @@ namespace StatsN
             {
                 Queue.Enqueue(payload);
                 if (!worker.IsBusy) worker.RunWorkerAsync();
-#if net40
                 return TplFactory.FromResult();
-#else
-                return Task.FromResult(0);
-#endif
             }
             return SendAsync(payload);
         }
