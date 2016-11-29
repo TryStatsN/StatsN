@@ -96,13 +96,15 @@ namespace StatsN.UnitTests
             var mockedMetric = new Mock<NullChannel>();
             mockedMetric.Setup(a => a.IsConnected).Returns(true);
             mockedMetric.Setup(a => a.SendAsync(It.Is<byte[]>(param => param.Length > 200 && param.Length < 512))).Verifiable();
-            var statsd = new Statsd(new StatsdOptions() { BufferMetrics = true }, mockedMetric.Object);
-            for (int i = 0; i < 100000; i++)
+            using (var statsd = new Statsd(new StatsdOptions() { BufferMetrics = true }, mockedMetric.Object))
             {
-                statsd.CountAsync("fun");
+                for (int i = 0; i < 100000; i++)
+                {
+                    statsd.CountAsync("fun");
+                }
+                while (mockedMetric.Object.worker.IsBusy) { }
+                mockedMetric.Verify();
             }
-            while (mockedMetric.Object.worker.IsBusy) { }
-            mockedMetric.Verify();
         }
         [Fact]
         public void ConfirmMetricsNotBuffered()
@@ -110,46 +112,52 @@ namespace StatsN.UnitTests
             var mockedMetric = new Mock<NullChannel>();
             mockedMetric.Setup(a => a.IsConnected).Returns(true);
             mockedMetric.Setup(a => a.SendAsync(It.Is<byte[]>(param => param.Length < 50))).Verifiable();
-            var statsd = new Statsd(new StatsdOptions() {}, mockedMetric.Object);
-            for (int i = 0; i < 100000; i++)
+            using (var statsd = new Statsd(new StatsdOptions() { }, mockedMetric.Object))
             {
-                statsd.CountAsync("fun");
+                for (int i = 0; i < 100000; i++)
+                {
+                    statsd.CountAsync("fun");
+                }
+                while (mockedMetric.Object.worker.IsBusy) { }
+                mockedMetric.Verify();
             }
-            while (mockedMetric.Object.worker.IsBusy) { }
-            mockedMetric.Verify();
         }
         [Fact]
         public void ConfirmUdpSendBuffTime()
         {
             var client = new Udp();
             var options = new StatsdOptions() { BufferMetrics = true, OnExceptionGenerated = (exception)=> { throw exception; } };
-            var statsd = new Statsd(options, client);
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
-            for (int i = 0; i < 100000; i++)
+            using (var statsd = new Statsd(options, client))
             {
-                statsd.CountAsync("fun");
+                var stopwatch = new Stopwatch();
+                stopwatch.Start();
+                for (int i = 0; i < 100000; i++)
+                {
+                    statsd.CountAsync("fun");
+                }
+                while (client.worker.IsBusy) { }
+                stopwatch.Stop();
+                //we shouldn't cost more than 1 milisecond a metric buffered or not
+                Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 100000);
             }
-            while (client.worker.IsBusy) { }
-            stopwatch.Stop();
-            //we shouldn't cost more than 1 milisecond a metric buffered or not
-            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 100000);
         }
         [Fact]
         public void ConfirmUdpSendNoBufferedTime()
         {
             var client = new Udp();
-            var statsd = new Statsd(new StatsdOptions() { BufferMetrics = false, OnExceptionGenerated = (exception) => { throw exception; } }, client);
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
-            for (int i = 0; i < 100000; i++)
+            using (var statsd = new Statsd(new StatsdOptions() { BufferMetrics = false, OnExceptionGenerated = (exception) => { throw exception; } }, client))
             {
-                statsd.CountAsync("fun");
+                var stopwatch = new Stopwatch();
+                stopwatch.Start();
+                for (int i = 0; i < 100000; i++)
+                {
+                    statsd.CountAsync("fun");
+                }
+                while (client.worker.IsBusy) { }
+                stopwatch.Stop();
+                //we shouldn't cost more than 1 milisecond a metric buffered or not
+                Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 100000);
             }
-            while (client.worker.IsBusy) { }
-            stopwatch.Stop();
-            //we shouldn't cost more than 1 milisecond a metric buffered or not
-            Assert.InRange(stopwatch.ElapsedMilliseconds, 0, 100000);
         }
     }
 }

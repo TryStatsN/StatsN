@@ -31,11 +31,19 @@ namespace StatsN
             {
                 endpoint = _ipEndpoint;
             }
+            try
+            {
 #if net40
-            _udpClient.Send(payload, payload.Length, endpoint);
+                await TaskEx.Run(() => _udpClient.Send(payload, payload.Length, endpoint)).ConfigureAwait(false);
 #else
-            await _udpClient.SendAsync(payload, payload.Length, endpoint).ConfigureAwait(false);
+                await _udpClient.SendAsync(payload, payload.Length, endpoint).ConfigureAwait(false);
 #endif
+            }
+            catch(Exception e)
+            {
+                Options.LogException(e);
+            }
+
         }
         public override bool IsConnected
         {

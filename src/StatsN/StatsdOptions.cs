@@ -11,7 +11,7 @@ namespace StatsN
     {
         public Action<System.Exception> OnExceptionGenerated;
         public Action<StatsdLogMessage> OnLogEventGenerated;
-
+        public TraceSource TraceSource { get; private set; } = new TraceSource(Constants.StatsN, SourceLevels.Warning);
         public bool BufferMetrics { get; set; } = false;
         public int BufferSize { get; set; } = 512;
         public string HostOrIp { get; set; } = Constants.Localhost;
@@ -30,7 +30,7 @@ namespace StatsN
             }
         }
 
-        internal void LogException(System.Exception exception)
+        internal void LogException(Exception exception)
         {
             if(OnExceptionGenerated == null)
             {
@@ -39,25 +39,23 @@ namespace StatsN
             }
             OnExceptionGenerated.Invoke(exception);
 
-            
         }
         internal void LogEvent(string message, EventType weight) => this.LogEvent(new StatsdLogMessage(message, weight));
         
         internal void LogEvent(StatsdLogMessage logMessage)
         {
-            if(OnLogEventGenerated == null)
+            if (OnLogEventGenerated == null)
             {
-                var traceMessage = $"{Constants.Statsd}: {logMessage.Message}";
                 switch (logMessage.Weight)
                 {
                     case EventType.Info:
-                        Trace.TraceInformation(traceMessage);
+                        TraceSource.TraceEvent(TraceEventType.Information, 1, logMessage.Message);
                         break;
                     case EventType.Warning:
-                        Trace.TraceWarning(traceMessage);
+                        TraceSource.TraceEvent(TraceEventType.Warning, 2, logMessage.Message);
                         break;
                     case EventType.Error:
-                        Trace.TraceError(traceMessage);
+                        TraceSource.TraceEvent(TraceEventType.Error, 1, logMessage.Message);
                         break;
                 }
             }

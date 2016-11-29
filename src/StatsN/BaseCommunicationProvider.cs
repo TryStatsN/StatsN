@@ -13,6 +13,9 @@ namespace StatsN
 {
     public abstract class BaseCommunicationProvider : IDisposable
     {
+        /// <summary>
+        /// User Options
+        /// </summary>
         protected StatsdOptions Options { get; private set; }
         internal BackgroundWorker worker { get; set; }
         private ConcurrentQueue<byte[]> Queue { get; } = new ConcurrentQueue<byte[]>();
@@ -58,9 +61,20 @@ namespace StatsN
             this.Options = options;
             return this;
         }
+        /// <summary>
+        /// Connect the socket
+        /// </summary>
+        /// <returns></returns>
         public abstract Task<bool> Connect();
+        /// <summary>
+        /// Is the socket connected?
+        /// </summary>
         public abstract bool IsConnected { get; }
-
+        /// <summary>
+        /// Send metric to inherited provider
+        /// </summary>
+        /// <param name="metric"></param>
+        /// <returns></returns>
         internal Task SendMetric(string metric)
         {
             var payload = Encoding.ASCII.GetBytes(metric + Environment.NewLine);
@@ -73,11 +87,18 @@ namespace StatsN
             return SendAsync(payload);
         }
         public abstract Task SendAsync(byte[] payload);
-
+        /// <summary>
+        /// Get the IPEndpoint for the Options object, will return null if it cannot be established
+        /// </summary>
+        /// <returns></returns>
         protected Task<IPEndPoint> GetIpAddressAsync() => GetIpAddressAsync(this.Options.HostOrIp, this.Options.Port);
-#pragma warning disable CS1998 // Async runs sync (in net40)
+        /// <summary>
+        /// Get the IPEndpoint for the Options object, will return null if it cannot be established
+        /// </summary>
+        /// <param name="hostOrIPAddress"></param>
+        /// <param name="port"></param>
+        /// <returns></returns>
         protected async Task<IPEndPoint> GetIpAddressAsync(string hostOrIPAddress, int port)
-#pragma warning restore CS1998  // Async runs sync (in net40)
         {
             IPAddress ipAddress;
             // Is this an IP address already?
@@ -86,7 +107,7 @@ namespace StatsN
                 try
                 {
 #if net40
-                    ipAddress = Dns.GetHostAddresses(hostOrIPAddress).First(p => p.AddressFamily == AddressFamily.InterNetwork);
+                    ipAddress = await TaskEx.Run(()=>Dns.GetHostAddresses(hostOrIPAddress).First(p => p.AddressFamily == AddressFamily.InterNetwork)).ConfigureAwait(false);
 #else
                     ipAddress = (await Dns.GetHostAddressesAsync(hostOrIPAddress).ConfigureAwait(false)).First(p => p.AddressFamily == AddressFamily.InterNetwork);
 #endif

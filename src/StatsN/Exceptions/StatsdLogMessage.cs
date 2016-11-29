@@ -8,10 +8,9 @@ namespace StatsN.Exceptions
     {
         public string Message { get; set; }
         public EventType Weight { get; set; }
-        
         public StatsdLogMessage(string message, EventType weight)
         {
-            this.Message = message;
+            this.Message = message ?? string.Empty;
             Weight = weight;
         }
     }

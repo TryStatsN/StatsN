@@ -86,6 +86,7 @@ namespace StatsN
                 return;
             }
             var calculateMetric = BuildMetric(metricName, value, metricType, options.Prefix, postfix);
+            options.LogEvent(calculateMetric, EventType.Info);
             if (string.IsNullOrWhiteSpace(calculateMetric))
             {
                 options.LogEvent($"Unable to generate metric for {metricType} value {value}", EventType.Error);

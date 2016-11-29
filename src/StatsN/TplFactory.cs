@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 namespace StatsN
 {
     /// <summary>
-    /// Class that provides Task.FromResult functions for dotnet 4+
+    /// Class that provides Task.FromResult functions for dotnet 4 and up
     /// </summary>
     public static class TplFactory
     {
         public static Task<Result> FromResult<Result>(Result result)
         {
 #if net40
-            var taskSource = new TaskCompletionSource<Result>();
-            taskSource.SetResult(result);
-            return taskSource.Task;
+            return TaskEx.FromResult(result);
 #else
             return Task.FromResult<Result>(result);
 #endif
@@ -23,8 +21,7 @@ namespace StatsN
         public static Task FromResult()
         {
 #if net40
-            //gross but .net 4
-            return System.Threading.Tasks.Task.Factory.StartNew(() => { });
+            return TaskEx.FromResult(0);
 #else
             return Task.FromResult(0);
 #endif

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace StatsN
 {
-    internal class Constants
+    internal static class Constants
     {
         internal const char colon = ':';
         internal const char pipe = '|';
         internal const char dot = '.';
         internal const string Localhost = "127.0.0.1";
-        internal const string Statsd = "Statsd";
+        internal const string StatsN = "StatsN";
         
         internal static class Metrics
         {
