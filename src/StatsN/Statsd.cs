@@ -60,7 +60,7 @@ namespace StatsN
             }
             if(provider == null)
             {
-                _provider = new Udp();
+                provider = new Udp();
             }
             if (string.IsNullOrEmpty(options.HostOrIp))
             {

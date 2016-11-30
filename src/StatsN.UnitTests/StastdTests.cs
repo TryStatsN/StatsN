@@ -49,6 +49,17 @@ namespace StatsN.UnitTests
             Assert.Equal("awesome", options.Prefix);
         }
         [Fact]
+        public void ConstructWithoutProvider()
+        {
+            //check to make sure the constructor doesn't blow
+            var t = new Statsd(new StatsdOptions()
+            {
+                OnExceptionGenerated = (exception) => { throw exception; }
+            });
+            t.CountAsync("awesome").GetAwaiter().GetResult();
+            t.Dispose();
+        }
+        [Fact]
         public void CorrectMetricTypesPassed()
         {
             var statsd = Statsd.New<NullChannel>(a => { a.HostOrIp = "localhost"; a.OnExceptionGenerated = (b) => { throw b; }; });
