@@ -84,6 +84,12 @@ var opt = new StatsdOptions(){
 
 By default the various logging metric functions return Tasks. **You do not need to await on these** If you await on these and you have buffered metrics off , you will return after the bytes have been added to the network stream. If you await, and buffered metrics are on then your await will return when your metric has been added to the Queue of metrics to be sent.
 
+
+## dotnet 4.0
+
+While this project does target dotnet 4.0, the unit tests do not run in 4.0. The support is limited (new features may not come to dotnet 4.S), but bugs will be addressed.
+
+
 ## Dev setup
 
 If you plan on playing around with the code, be sure to download and install [.NET core sdk](https://www.microsoft.com/net/core).
