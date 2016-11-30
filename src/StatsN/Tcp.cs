@@ -61,7 +61,7 @@ namespace StatsN
         }
         public void DisposeClient()
         {
-#if net45
+#if NETFULL
             Client?.Close();
 #else
             Client?.Dispose();

@@ -31,7 +31,17 @@
         "System.Dynamic.Runtime": "4.0.0.0"
       },
       "buildOptions": {
-        "define": [ "net45" ]
+        "define": [ "net45", "NETFULL" ]
+      }
+    },
+    "net40": {
+      "frameworkAssemblies": {
+      },
+      "dependencies": {
+        "Microsoft.Bcl.Async":  "1.0.166"
+      },
+      "buildOptions": {
+        "define": [ "net40", "NETFULL" ]
       }
     },
     "netstandard1.3": {
