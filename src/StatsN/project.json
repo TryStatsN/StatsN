@@ -25,11 +25,6 @@
    },
   "frameworks": {
     "net45": {
-      "frameworkAssemblies": {
-        "System.ComponentModel.EventBasedAsync": "4.0.0.0",
-        "System.Diagnostics.Tracing": "4.0.0.0",
-        "System.Dynamic.Runtime": "4.0.0.0"
-      },
       "buildOptions": {
         "define": [ "net45", "NETFULL" ]
       }
@@ -50,7 +45,6 @@
         "System.Net.NameResolution": "4.0.0",
         "System.Diagnostics.TraceSource": "4.0.0",
         "System.ComponentModel.EventBasedAsync": "4.0.11",
-        "System.Dynamic.Runtime": "4.0.11",
         "NETStandard.Library": "1.6.0"
       }
     }
