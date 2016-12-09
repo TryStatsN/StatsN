@@ -2,7 +2,7 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "StatsN.Contracts": "1.2.0"
+    "StatsN.Contracts": "1.2.1"
   },
    "packOptions": {
       "owners": [

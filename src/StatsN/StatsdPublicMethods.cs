@@ -60,32 +60,32 @@ namespace StatsN
 
         public void Count(string name, long count = 1)
         {
-            this.CountAsync(name, count);
+            this.CountAsync(name, count).GetAwaiter().GetResult();
         }
 
         public void Gauge(string name, long value)
         {
-            this.GaugeAsync(name, value);
+            this.GaugeAsync(name, value).GetAwaiter().GetResult();
         }
 
         public void GaugeDelta(string name, long value)
         {
-            this.GaugeDeltaAsync(name, value);
+            this.GaugeDeltaAsync(name, value).GetAwaiter().GetResult();
         }
 
         public void Timing(string name, long milliseconds)
         {
-            this.TimingAsync(name, milliseconds);
+            this.TimingAsync(name, milliseconds).GetAwaiter().GetResult();
         }
 
         public void Timing(string name, Action actionToTime)
         {
-            this.TimingAsync(name, actionToTime);
+            this.TimingAsync(name, actionToTime).GetAwaiter().GetResult();
         }
 
         public void Set(string name, long value)
         {
-            this.SetAsync(name, value);
+            this.SetAsync(name, value).GetAwaiter().GetResult();
         }
     }
 }
