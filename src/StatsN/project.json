@@ -1,7 +1,8 @@
-﻿{
+{
   "version": "1.0.0-*",
 
   "dependencies": {
+    "StatsN.Contracts": "1.2.0"
   },
    "packOptions": {
       "owners": [

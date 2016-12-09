@@ -58,5 +58,34 @@ namespace StatsN
         /// <returns></returns>
         public Task SetAsync(string name, long value) => LogMetricAsync(name, value, Constants.Metrics.SET);
 
+        public void Count(string name, long count = 1)
+        {
+            this.CountAsync(name, count);
+        }
+
+        public void Gauge(string name, long value)
+        {
+            this.GaugeAsync(name, value);
+        }
+
+        public void GaugeDelta(string name, long value)
+        {
+            this.GaugeDeltaAsync(name, value);
+        }
+
+        public void Timing(string name, long milliseconds)
+        {
+            this.TimingAsync(name, milliseconds);
+        }
+
+        public void Timing(string name, Action actionToTime)
+        {
+            this.TimingAsync(name, actionToTime);
+        }
+
+        public void Set(string name, long value)
+        {
+            this.SetAsync(name, value);
+        }
     }
 }
