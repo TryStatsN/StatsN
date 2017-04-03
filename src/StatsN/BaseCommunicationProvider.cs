@@ -106,12 +106,7 @@ namespace StatsN
             {
                 try
                 {
-#if net40
-                    ipAddress = await TaskEx.Run(()=>Dns.GetHostAddresses(hostOrIPAddress).First(p => p.AddressFamily == AddressFamily.InterNetwork)).ConfigureAwait(false);
-#else
                     ipAddress = (await Dns.GetHostAddressesAsync(hostOrIPAddress).ConfigureAwait(false)).First(p => p.AddressFamily == AddressFamily.InterNetwork);
-#endif
-
                 }
                 catch (Exception)
                 {
