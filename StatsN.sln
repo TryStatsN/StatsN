@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{12DA80FB-B934-47BA-897D-AC75FF62F737}"
 EndProject
@@ -10,16 +10,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
 		Coverage.ps1 = Coverage.ps1
-		global.json = global.json
 		Readme.md = Readme.md
 		update-projectjson.ps1 = update-projectjson.ps1
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StatsN", "src\StatsN\StatsN.xproj", "{1F37D04E-D74F-43EC-ABF1-591A23B26EFD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatsN", "src\StatsN\StatsN.csproj", "{1F37D04E-D74F-43EC-ABF1-591A23B26EFD}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StatsN.UnitTests", "src\StatsN.UnitTests\StatsN.UnitTests.xproj", "{B8C4A667-73F7-4623-9CBD-AC53CF6C8909}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatsN.UnitTests", "src\StatsN.UnitTests\StatsN.UnitTests.csproj", "{B8C4A667-73F7-4623-9CBD-AC53CF6C8909}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "StatsN.IntergrationTests", "src\StatsN.IntergrationTests\StatsN.IntergrationTests.xproj", "{CE3C972F-8563-4B78-B79A-7DD76D6ADC0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StatsN.IntergrationTests", "src\StatsN.IntergrationTests\StatsN.IntergrationTests.csproj", "{CE3C972F-8563-4B78-B79A-7DD76D6ADC0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
